@@ -27,4 +27,11 @@
         custom:rightBackground="#ffffff">
 
     </com.example.yukai.mydefinedview.MyView.MyTopBarView>
+
+    <com.example.yukai.mydefinedview.MyView.MyCircleRatingView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="MyCircleRatingView"
+        android:textSize="10dp" />
+
 </LinearLayout>
