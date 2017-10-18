@@ -1,30 +1,34 @@
 package com.example.yukai.mydefinedview;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
 
-import com.example.yukai.mydefinedview.MyView.MyTopBarView;
+import com.example.yukai.mydefinedview.BasicView.BasicViewActivity;
+import com.example.yukai.mydefinedview.MyView.MyDefinedViewActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
-    private MyTopBarView mMyTopBarView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mMyTopBarView = (MyTopBarView) findViewById(R.id.my_top_bar_view);
-        mMyTopBarView.setMyTopBarClicklistener(new MyTopBarView.MyTopbarClickListener() {
-            @Override
-            public void leftClick() {
-                Toast.makeText(MainActivity.this, "left button clicked", Toast.LENGTH_LONG).show();
-            }
+        setContentView(R.layout.home_page_layout);
+        ((Button)findViewById(R.id.btn_my_defined_view)).setOnClickListener(this);
+        ((Button)findViewById(R.id.btn_basic_view)).setOnClickListener(this);
+    }
 
-            @Override
-            public void rightClick() {
-                Toast.makeText(MainActivity.this, "right button clicked", Toast.LENGTH_LONG).show();
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id == R.id.btn_my_defined_view){
+            Intent intent = new Intent(this, MyDefinedViewActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.btn_basic_view){
+            Intent intent = new Intent(this, BasicViewActivity.class);
+            startActivity(intent);
+        }
     }
 }
