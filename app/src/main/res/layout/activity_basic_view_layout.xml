@@ -11,4 +11,10 @@
         android:layout_height="wrap_content"
         android:text="RECYCLER VIEW"/>
 
+    <Button
+        android:id="@+id/btn_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GRID VIEW"/>
+
 </LinearLayout>

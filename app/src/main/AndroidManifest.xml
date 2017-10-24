@@ -19,6 +19,7 @@
         <activity android:name=".MyView.MyDefinedViewActivity" />
         <activity android:name=".BasicView.BasicViewActivity"/>
         <activity android:name=".BasicView.RecyclerView.RecyclerViewActivity"/>
+        <activity android:name=".BasicView.Grid.GridViewActivity"/>
     </application>
 
 </manifest>
