@@ -13,9 +13,11 @@ import com.example.yukai.mydefinedview.R;
 public class MyViewHolder extends RecyclerView.ViewHolder{
 
     public TextView mTextView;
+    public View mItemView;
 
     public MyViewHolder(View view){
         super(view);
+        mItemView = view;
         mTextView = (TextView) view.findViewById(R.id.recycler_view_item_tv);
     }
 }

@@ -12,4 +12,16 @@
         android:divider="#ff0000"
         android:dividerHeight="5dp"/>
 
+    <Button
+        android:id="@+id/add_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="add one item"/>
+
+    <Button
+        android:id="@+id/delete_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="delete one"/>
+
 </LinearLayout>
