@@ -20,6 +20,7 @@
         <activity android:name=".BasicView.BasicViewActivity"/>
         <activity android:name=".BasicView.RecyclerView.RecyclerViewActivity"/>
         <activity android:name=".BasicView.Grid.GridViewActivity"/>
+        <activity android:name=".BasicView.PopUpWindow.PopUpWindowActivity"/>
     </application>
 
 </manifest>

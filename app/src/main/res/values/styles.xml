@@ -8,7 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:listDivider">@drawable/divider_bg</item>
     </style>
+
     <!--<style name="AppTheme" parent="AppBaseTheme">-->
         <!--<item name="android:listDivider">@drawable/divider_bg</item>-->
     <!--</style>-->
+
+    <style name="contextMenuAnim" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/popup_window_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/popup_window_exit_anim</item>
+    </style>
 </resources>

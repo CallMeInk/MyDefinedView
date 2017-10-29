@@ -17,4 +17,10 @@
         android:layout_height="wrap_content"
         android:text="GRID VIEW"/>
 
+    <Button
+        android:id="@+id/btn_pop_up_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="POPUP WINDOW"/>
+
 </LinearLayout>
