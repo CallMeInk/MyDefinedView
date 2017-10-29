@@ -63,6 +63,7 @@ public class PopUpWindowActivity extends Activity{
         mPopupWindow.setTouchable(true);
         mPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mPopupWindow.setOutsideTouchable(false);
-        mPopupWindow.showAtLocation(rootView, Gravity.BOTTOM, 0, 0);
+        //mPopupWindow.showAtLocation(rootView, Gravity.BOTTOM, 0, 0);
+        mPopupWindow.showAsDropDown(mButton);
     }
 }
