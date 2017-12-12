@@ -17,11 +17,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".MyView.MyDefinedViewActivity" />
-        <activity android:name=".BasicView.BasicViewActivity"/>
-        <activity android:name=".BasicView.RecyclerView.RecyclerViewActivity"/>
-        <activity android:name=".BasicView.Grid.GridViewActivity"/>
-        <activity android:name=".BasicView.PopUpWindow.PopUpWindowActivity"/>
-        <activity android:name=".BasicView.AnimTest.AnimTestActivity"/>
+        <activity android:name=".BasicView.BasicViewActivity" />
+        <activity android:name=".BasicView.RecyclerView.RecyclerViewActivity" />
+        <activity android:name=".BasicView.Grid.GridViewActivity" />
+        <activity android:name=".BasicView.PopUpWindow.PopUpWindowActivity" />
+        <activity android:name=".BasicView.AnimTest.AnimTestActivity" />
+        <activity android:name=".ArtLearningNote.ArtTotal"/>
+        <activity android:name=".ArtLearningNote.chapter3_1.Chapter3_1"/>
     </application>
 
 </manifest>

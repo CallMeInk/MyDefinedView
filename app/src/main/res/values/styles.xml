@@ -10,11 +10,20 @@
     </style>
 
     <!--<style name="AppTheme" parent="AppBaseTheme">-->
-        <!--<item name="android:listDivider">@drawable/divider_bg</item>-->
+    <!--<item name="android:listDivider">@drawable/divider_bg</item>-->
     <!--</style>-->
 
     <style name="contextMenuAnim" parent="@android:style/Animation.Activity">
         <item name="android:windowEnterAnimation">@anim/popup_window_enter_anim</item>
         <item name="android:windowExitAnimation">@anim/popup_window_exit_anim</item>
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

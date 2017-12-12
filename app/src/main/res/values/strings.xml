@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyDefinedView</string>
+    <string name="title_activity_basic_view_knowledge">BasicViewKnowledgeActivity</string>
 </resources>

@@ -8,12 +8,18 @@
         android:id="@+id/btn_my_defined_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MY DEFINED VIEW"/>
+        android:text="My Defined View"/>
 
     <Button
         android:id="@+id/btn_basic_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="BASIC VIEW"/>
+        android:text="Basic View"/>
+
+    <Button
+        android:id="@+id/btn_art_learning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android Art"/>
 
 </LinearLayout>
