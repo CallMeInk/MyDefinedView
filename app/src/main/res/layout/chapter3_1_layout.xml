@@ -2,11 +2,24 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
+        android:id="@+id/touch_slop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="hello world"/>
 
+    <TextView
+        android:id="@+id/gesture_detect"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="#ff6913"
+        android:text="gesture detect"/>
+
+    <TextView
+        android:id="@+id/speed_info_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>
