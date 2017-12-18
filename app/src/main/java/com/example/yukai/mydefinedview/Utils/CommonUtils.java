@@ -1,6 +1,7 @@
 package com.example.yukai.mydefinedview.Utils;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -22,5 +23,8 @@ public class CommonUtils {
         Toast.makeText(context, string, time).show();
     }
 
+    public static void log(String message){
+        Log.e("yk", message);
+    }
 
 }

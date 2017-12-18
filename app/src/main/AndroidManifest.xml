@@ -24,6 +24,7 @@
         <activity android:name=".BasicView.AnimTest.AnimTestActivity" />
         <activity android:name=".ArtLearningNote.ArtTotal"/>
         <activity android:name=".ArtLearningNote.chapter3_1.Chapter3_1"/>
+        <activity android:name=".ArtLearningNote.chapter3_2.Chapter3_2"/>
     </application>
 
 </manifest>
