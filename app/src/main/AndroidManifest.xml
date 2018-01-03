@@ -25,6 +25,7 @@
         <activity android:name=".ArtLearningNote.ArtTotal"/>
         <activity android:name=".ArtLearningNote.chapter3_1.Chapter3_1"/>
         <activity android:name=".ArtLearningNote.chapter3_2.Chapter3_2"/>
+        <activity android:name=".ArtLearningNote.chapter3_4.Chapter3_4"/>
     </application>
 
 </manifest>
