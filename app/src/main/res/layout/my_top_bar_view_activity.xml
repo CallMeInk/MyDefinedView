@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.yukai.mydefinedview.MyView.MyTopBarView
+        android:id="@+id/my_top_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        custom:title="MyTobBar"
+        custom:titleTextColor="#0000ff"
+        custom:titleTextSize="30dp"
+        custom:leftText="back"
+        custom:leftTextColor="#000000"
+        custom:leftBackGround="#ffffff"
+        custom:rightText="forward"
+        custom:rightTextColor="#000000"
+        custom:rightBackground="#ffffff"/>
+
+</LinearLayout>

@@ -26,6 +26,12 @@
         <activity android:name=".ArtLearningNote.chapter3_1.Chapter3_1"/>
         <activity android:name=".ArtLearningNote.chapter3_2.Chapter3_2"/>
         <activity android:name=".ArtLearningNote.chapter3_4.Chapter3_4"/>
+        <activity android:name=".MyView.MyTextViewActivity"/>
+        <activity android:name=".MyView.MyTopBarViewActivity"/>
+        <activity android:name=".MyView.MyCircleRatingViewActivity"/>
+        <activity android:name=".MyView.MyMediaRectViewActivity"/>
+        <activity android:name=".MyView.MySimpleViewActivity"/>
+
     </application>
 
 </manifest>
