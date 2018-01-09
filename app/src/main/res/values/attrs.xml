@@ -11,4 +11,9 @@
         <attr name="rightTextColor" format="color"/>
         <attr name="rightBackground" format="reference|color"/>
     </declare-styleable>
+
+    <declare-styleable name="MyAutoLayout">
+        <attr name="maxLines" format="integer"/>
+    </declare-styleable>
+
 </resources>

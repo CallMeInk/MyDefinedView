@@ -1,4 +1,4 @@
-package com.example.yukai.mydefinedview.MyView;
+package com.example.yukai.mydefinedview.MyView.MyMediaRectView;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,11 +10,11 @@ import com.example.yukai.mydefinedview.R;
  * Created by yukai on 2018/1/6.
  */
 
-public class MyCircleRatingViewActivity extends Activity {
+public class MyMediaRectViewActivity extends Activity{
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_circle_rating_view_activity);
+        setContentView(R.layout.my_media_rect_view_activity_layout);
     }
 }

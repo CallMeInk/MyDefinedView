@@ -1,4 +1,4 @@
-package com.example.yukai.mydefinedview.MyView;
+package com.example.yukai.mydefinedview.MyView.MyCircleRatingView;
 
 import android.content.Context;
 import android.graphics.Canvas;

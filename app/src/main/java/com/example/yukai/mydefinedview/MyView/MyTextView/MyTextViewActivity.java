@@ -1,4 +1,4 @@
-package com.example.yukai.mydefinedview.MyView;
+package com.example.yukai.mydefinedview.MyView.MyTextView;
 
 import android.app.Activity;
 import android.os.Bundle;

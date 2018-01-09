@@ -4,8 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
+import com.example.yukai.mydefinedview.MyView.MyAutoLayout.MyAutoLayoutActivity;
+import com.example.yukai.mydefinedview.MyView.MyCircleRatingView.MyCircleRatingViewActivity;
+import com.example.yukai.mydefinedview.MyView.MyMediaRectView.MyMediaRectViewActivity;
+import com.example.yukai.mydefinedview.MyView.MySimpleView.MySimpleViewActivity;
+import com.example.yukai.mydefinedview.MyView.MyTextView.MyTextViewActivity;
+import com.example.yukai.mydefinedview.MyView.MyTopBarView.MyTopBarViewActivity;
 import com.example.yukai.mydefinedview.R;
 
 public class MyDefinedViewActivity extends Activity implements View.OnClickListener{
@@ -20,6 +25,7 @@ public class MyDefinedViewActivity extends Activity implements View.OnClickListe
         (findViewById(R.id.my_circle_rating_view_btn)).setOnClickListener(this);
         (findViewById(R.id.my_media_rect_view_btn)).setOnClickListener(this);
         (findViewById(R.id.my_simple_view_btn)).setOnClickListener(this);
+        (findViewById(R.id.my_auto_layout)).setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +45,9 @@ public class MyDefinedViewActivity extends Activity implements View.OnClickListe
             startActivity(intent);
         }else if (id == R.id.my_simple_view_btn){
             Intent intent = new Intent(MyDefinedViewActivity.this, MySimpleViewActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.my_auto_layout){
+            Intent intent = new Intent(MyDefinedViewActivity.this, MyAutoLayoutActivity.class);
             startActivity(intent);
         }
     }

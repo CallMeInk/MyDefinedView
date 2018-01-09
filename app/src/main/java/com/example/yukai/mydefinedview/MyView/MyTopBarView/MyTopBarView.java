@@ -1,4 +1,4 @@
-package com.example.yukai.mydefinedview.MyView;
+package com.example.yukai.mydefinedview.MyView.MyTopBarView;
 
 import android.content.Context;
 import android.content.res.TypedArray;

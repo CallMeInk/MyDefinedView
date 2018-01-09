@@ -1,4 +1,4 @@
-package com.example.yukai.mydefinedview.MyView;
+package com.example.yukai.mydefinedview.MyView.MySimpleView;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -35,4 +35,10 @@
         android:layout_height="wrap_content"
         android:text="my_simple_view"/>
 
+    <Button
+        android:id="@+id/my_auto_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="my_auto_layout"/>
+
 </LinearLayout>

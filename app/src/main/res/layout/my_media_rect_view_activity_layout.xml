@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.yukai.mydefinedview.MyView.MyMediaRectView
+    <com.example.yukai.mydefinedview.MyView.MyMediaRectView.MyMediaRectView
         android:layout_width="match_parent"
         android:layout_height="300dp" />
 
