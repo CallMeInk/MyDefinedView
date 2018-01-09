@@ -19,7 +19,7 @@ public class MyAutoLayout extends ViewGroup{
 
     private final int DEFAULT_MAX_LINES = 2;
     private int mMaxLines = DEFAULT_MAX_LINES;
-    private ArrayList<EachLine> mLines = new ArrayList<EachLine>();
+    private ArrayList<EachLine> mLines;
 
     public MyAutoLayout(Context context){
         super(context);
@@ -44,7 +44,6 @@ public class MyAutoLayout extends ViewGroup{
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        Log.e("yk", "onMeasure:: getMeasuredWidth:: " + getMeasuredWidth());
         int width = MeasureSpec.getSize(widthMeasureSpec);
 
         int horizontalPadding = getPaddingLeft() + getPaddingRight();
