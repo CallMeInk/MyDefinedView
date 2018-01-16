@@ -75,7 +75,6 @@ public class BrotherView extends ViewGroup{
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 CommonUtils.log("ontouchEvent:: ACTION_DOWN");
-                //break;
                 return true;
             case MotionEvent.ACTION_MOVE:
                 int moveX = (int)event.getRawX();
@@ -89,8 +88,10 @@ public class BrotherView extends ViewGroup{
                 }
                 scrollBy(scrolledX, 0);
                 mLastX = moveX;
-                break;
+                return false;
+                //break;
             case MotionEvent.ACTION_UP:
+                CommonUtils.log("ontouchEvent:: ACTION_UP");
                 int targetIndex = (getScrollX() + getWidth() / 2) / getWidth();
                 int deltaX = targetIndex * getWidth() - getScrollX();
                 mScroller.startScroll(getScrollX(), 0, deltaX, 0);

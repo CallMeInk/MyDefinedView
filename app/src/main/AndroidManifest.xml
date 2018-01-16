@@ -33,6 +33,7 @@
         <activity android:name=".MyView.MyMediaRectView.MyMediaRectViewActivity"/>
         <activity android:name=".MyView.MySimpleView.MySimpleViewActivity"/>
         <activity android:name=".MyView.MyAutoLayout.MyAutoLayoutActivity"/>
+        <activity android:name=".BasicView.RatingBar.RatingBarActivity"/>
 
     </application>
 
