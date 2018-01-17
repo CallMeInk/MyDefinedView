@@ -34,6 +34,9 @@
         <activity android:name=".MyView.MySimpleView.MySimpleViewActivity"/>
         <activity android:name=".MyView.MyAutoLayout.MyAutoLayoutActivity"/>
         <activity android:name=".BasicView.RatingBar.RatingBarActivity"/>
+        <activity android:name=".BasicView.ActivityLifeCycleTest.Activity_A"/>
+        <activity android:name=".BasicView.ActivityLifeCycleTest.Activity_B"/>
+        <activity android:name=".BasicView.ActivityLifeCycleTest.BaseActivity"/>
 
     </application>
 
