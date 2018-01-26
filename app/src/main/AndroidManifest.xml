@@ -38,6 +38,7 @@
         <activity android:name=".BasicView.ActivityLifeCycleTest.Activity_B"/>
         <activity android:name=".ArtLearningNote.chapter5_1.Chapter5_1"/>
         <activity android:name=".ArtLearningNote.chapter5_1.NotificationActivity"/>
+        <activity android:name=".Utils.BitMapDisplayActivity"/>
 
     </application>
 

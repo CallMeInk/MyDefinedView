@@ -21,6 +21,10 @@ class Chapter5_1 : Activity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.chapter5_1_layout)
+        createNotificaton()
+    }
+
+    fun createNotificaton(){
         val intent = Intent(this, NotificationActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
         val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -34,7 +38,6 @@ class Chapter5_1 : Activity(){
                 .setWhen(System.currentTimeMillis())
         val notification = builder.build()
         manager.notify(0, notification)
-
     }
 
 }
