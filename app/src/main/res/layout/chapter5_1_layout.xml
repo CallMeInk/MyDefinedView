@@ -10,4 +10,22 @@
         android:layout_height="wrap_content"
         android:text="this is chapter5-1"/>
 
+    <Button
+        android:id="@+id/start_notification_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start a default notification"/>
+
+    <Button
+        android:id="@+id/start_fold_notification_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start a fold notification"/>
+
+    <Button
+        android:id="@+id/start_hang_style_notification_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start a hang style notification"/>
+
 </LinearLayout>
