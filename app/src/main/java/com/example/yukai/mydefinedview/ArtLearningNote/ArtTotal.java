@@ -11,6 +11,7 @@ import com.example.yukai.mydefinedview.ArtLearningNote.chapter3_2.Chapter3_2;
 import com.example.yukai.mydefinedview.ArtLearningNote.chapter3_3.Chapter3_3;
 import com.example.yukai.mydefinedview.ArtLearningNote.chapter3_4.Chapter3_4;
 import com.example.yukai.mydefinedview.ArtLearningNote.chapter5_1.Chapter5_1;
+import com.example.yukai.mydefinedview.ArtLearningNote.chapter6_1.Chapter6_1;
 import com.example.yukai.mydefinedview.R;
 
 /**
@@ -28,6 +29,7 @@ public class ArtTotal extends Activity implements View.OnClickListener{
         (findViewById(R.id.btn_3_3)).setOnClickListener(this);
         (findViewById(R.id.btn_3_4)).setOnClickListener(this);
         (findViewById(R.id.btn_5_1)).setOnClickListener(this);
+        (findViewById(R.id.btn_6_1)).setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +49,9 @@ public class ArtTotal extends Activity implements View.OnClickListener{
             startActivity(intent);
         }else if (id == R.id.btn_5_1){
             Intent intent = new Intent(this, Chapter5_1.class);
+            startActivity(intent);
+        }else if (id == R.id.btn_6_1){
+            Intent intent = new Intent(this, Chapter6_1.class);
             startActivity(intent);
         }
     }

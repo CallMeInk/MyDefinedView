@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="layer-list test"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/layer_list_test_1"
+            android:text="shadow"
+            android:gravity="center"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/layer_list_test_2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="level-list test"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"/>
+
+        <ImageView
+            android:id="@+id/level_list_image"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/level_list_test_1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/level_list_edit_text"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:hint="0-20"/>
+
+            <Button
+                android:id="@+id/change_level_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="change level"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="transition drawable test"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"/>
+
+        <ImageView
+            android:id="@+id/transition_drawable_image"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="inset drawable test"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"/>
+
+        <ImageView
+            android:id="@+id/inset_drawable_image"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/inset_drawable_test"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scale drawable test"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"/>
+
+        <ImageView
+            android:id="@+id/scale_drawable_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/scale_drawable_test"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="clip drawable test"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"/>
+
+        <ImageView
+            android:id="@+id/clip_drawable_image"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/clip_drawable_test"/>
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

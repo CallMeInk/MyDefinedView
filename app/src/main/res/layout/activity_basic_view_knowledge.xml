@@ -35,4 +35,10 @@
         android:layout_height="wrap_content"
         android:text="Chapter 5-1 notification"/>
 
+    <Button
+        android:id="@+id/btn_6_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chapter 6 DrawableTest"/>
+
 </LinearLayout>
