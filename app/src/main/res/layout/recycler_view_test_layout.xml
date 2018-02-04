@@ -24,4 +24,11 @@
         android:layout_height="wrap_content"
         android:text="delete one"/>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#ff0000"
+        android:dividerHeight="3dp"/>
+
 </LinearLayout>

@@ -2,15 +2,19 @@ package com.example.yukai.mydefinedview.BasicView.RecyclerView;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.yukai.mydefinedview.R;
 import com.example.yukai.mydefinedview.Utils.CommonUtils;
 
 import java.util.ArrayList;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 /**
  * Created by yukai on 2017/10/18.
@@ -21,6 +25,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder>{
     private ArrayList<String> mDatas;
     private Context mContext;
     private OnItemClickListener mOnItemClickListener;
+    private final static int image_width = (1080 - 3 * 12) / 4;
+    private android.os.Handler mHandler = new android.os.Handler();
 
     public MyRecyclerViewAdapter(ArrayList<String> datas, Context context){
         mDatas = datas;
@@ -59,6 +65,24 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder>{
                 return false;
             }
         });
+        holder.mImageView.setImageResource(R.drawable.hilton);
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) holder.mImageView.getLayoutParams();
+//        layoutParams.width = image_width;
+//        layoutParams.height = image_width;
+        layoutParams.width = (1080 ) / 4;
+        layoutParams.height = (1080 ) / 4;
+        layoutParams.leftMargin = getpaddingLeft(position);
+        layoutParams.rightMargin = getpaddingRight(position);
+        //holder.mImageView.setPadding(getpaddingLeft(position), 0, getpaddingRight(position), 0);
+        holder.mImageView.setLayoutParams(layoutParams);
+        if (position >= 0 && position <= 3){
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Log.e("yk", "rootView width::" + holder.mRootView.getWidth() + "   position :: " + position);
+                }
+            }, 2000);
+        }
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener){
@@ -69,4 +93,15 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder>{
         void onItemClick(View view, int position);
         void onItemLongClick(View view, int position);
     }
+
+    private int getpaddingLeft(int position){
+        position = position % 4;
+        return (image_width + 12) * position - 1080 / 4 * position;
+    }
+
+    private int getpaddingRight(int position){
+        position = position % 4;
+        return 1080 / 4 * (position + 1) - position * 12 - (position + 1) * image_width;
+    }
+
 }

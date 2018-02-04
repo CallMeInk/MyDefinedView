@@ -32,7 +32,7 @@ public class MyAutoLayoutActivity extends Activity{
         mMyAutoLayout.removeAllViews();
         for (int i = 0;i < N;i++){
             View view = LayoutInflater.from(this).inflate(R.layout.recycler_view_item, mMyAutoLayout, false);
-            TextView textView = (TextView) view.findViewById(R.id.recycler_view_item_tv);
+            TextView textView = (TextView) view.findViewById(R.id.recycler_view_item_iv);
             textView.setText("asdfadsfasdfasdfasdfafa" + "::::" + i);
             mMyAutoLayout.addView(view);
         }

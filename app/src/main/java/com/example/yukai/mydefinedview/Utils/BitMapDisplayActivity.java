@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.example.yukai.mydefinedview.R;
@@ -25,9 +26,7 @@ public class BitMapDisplayActivity extends Activity{
         ImageView imageView = (ImageView) findViewById(R.id.bitmap_display_im);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hilton);
         //imageView.setImageBitmap(BitmapUtils.getRoundBitmap(bitmap));
-        imageView.setImageBitmap(BitmapUtils.getRoundBitmap(BitmapUtils.cutBitMap(bitmap)));
-        if (Build.VERSION.SDK_INT >= 21){
-            imageView.setElevation(10);
-        }
+        imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        imageView.setImageBitmap(BitmapUtils.addBitmapShadow(BitmapUtils.getRoundBitmap(BitmapUtils.cutBitMap(bitmap))));
     }
 }

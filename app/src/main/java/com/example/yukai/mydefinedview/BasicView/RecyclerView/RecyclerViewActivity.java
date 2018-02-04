@@ -27,6 +27,7 @@ public class RecyclerViewActivity extends Activity implements View.OnClickListen
     private MyRecyclerViewAdapter mAdapter;
     private Button mAddBtn;
     private Button mDeleteBtn;
+    private RecyclerView mRecyclerViewTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class RecyclerViewActivity extends Activity implements View.OnClickListen
             }
         });
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerViewTest = (RecyclerView) findViewById(R.id.recycler_view_test);
         mAddBtn = (Button) findViewById(R.id.add_one);
         mAddBtn.setOnClickListener(this);
         mDeleteBtn = (Button) findViewById(R.id.delete_one);
@@ -56,7 +58,7 @@ public class RecyclerViewActivity extends Activity implements View.OnClickListen
         //mRecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         //水平 StaggredGridLayoutManager
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.HORIZONTAL));
-        mRecyclerView.setAdapter(mAdapter);
+        //mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.addItemDecoration(new MyDividerItemDecoration(this, MyDividerItemDecoration.VERTICAL_LIST));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 //        mRecyclerView.setOnTouchListener(new View.OnTouchListener() {
@@ -68,6 +70,14 @@ public class RecyclerViewActivity extends Activity implements View.OnClickListen
 //        });
         //scrolltoposition只会滑到对应index的item可见，并不能保证该item在可见的第一个位置。如果该item已经处于可见位置，则不会滑动
         //mRecyclerView.scrollToPosition(5);
+
+
+        mRecyclerViewTest.setLayoutManager(new GridLayoutManager(this, 4));
+        //mRecyclerViewTest.addItemDecoration(new DividerGridItemDecoration());
+        mRecyclerViewTest.setAdapter(mAdapter);
+
+
+
     }
 
     private void initDatas(){
