@@ -46,4 +46,12 @@
         android:background="#ff0000"
         android:text="hello world"/>
 
+    <ListView
+        android:id="@+id/animation_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutAnimation="@anim/anim_layout">
+
+    </ListView>
+
 </LinearLayout>

@@ -3,12 +3,14 @@ package com.example.yukai.mydefinedview;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.yukai.mydefinedview.ArtLearningNote.ArtTotal;
 import com.example.yukai.mydefinedview.BasicView.BasicViewActivity;
 import com.example.yukai.mydefinedview.MyView.MyDefinedViewActivity;
 import com.example.yukai.mydefinedview.Utils.BitMapDisplayActivity;
+import com.example.yukai.mydefinedview.Utils.DeviceUtils;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -21,6 +23,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         (findViewById(R.id.btn_basic_view)).setOnClickListener(this);
         (findViewById(R.id.btn_art_learning)).setOnClickListener(this);
         (findViewById(R.id.btn_bitmap_cut)).setOnClickListener(this);
+        Log.e("yk", DeviceUtils.getPixelFromDp(1) + "");
     }
 
     @Override
