@@ -53,6 +53,7 @@
         <activity android:name=".ArtLearningNote.chapter5_1.NotificationActivity"/>
         <activity android:name=".Utils.BitMapDisplayActivity"/>
         <activity android:name=".ArtLearningNote.chapter6_1.Chapter6_1"/>
+        <activity android:name=".ArtLearningNote.chapter8_1.Chapter8_1"/>
 
     </application>
 

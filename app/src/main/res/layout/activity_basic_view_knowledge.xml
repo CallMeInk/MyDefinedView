@@ -41,4 +41,10 @@
         android:layout_height="wrap_content"
         android:text="Chapter 6 DrawableTest"/>
 
+    <Button
+        android:id="@+id/btn_8_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chapter 8 window manager"/>
+
 </LinearLayout>
