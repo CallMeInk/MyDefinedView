@@ -5,10 +5,10 @@ import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.Display;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 
@@ -24,6 +24,8 @@ public class Chapter8_1 extends Activity implements View.OnClickListener{
     private WindowManager.LayoutParams mLayoutParams;
     private WindowManager mWindowManager;
     private Button mAddBtn;
+    private Button mRemoceBtn;
+    private boolean hasWindow = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,20 +33,44 @@ public class Chapter8_1 extends Activity implements View.OnClickListener{
         setContentView(R.layout.chapter8_1_layout);
         mAddBtn = (Button) findViewById(R.id.add_btn);
         mAddBtn.setOnClickListener(this);
+        mRemoceBtn = (Button) findViewById(R.id.remove_btn);
+        mRemoceBtn.setOnClickListener(this);
     }
 
     private void showButton(){
         mWindowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         mFloatingButton = new Button(this);
         mFloatingButton.setText("floating button");
-        mLayoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT,
+        mFloatingButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch (action){
+                    case MotionEvent.ACTION_DOWN:
+                        Log.e("yk", "action down");
+                        return true;
+                    case MotionEvent.ACTION_MOVE:
+                        Log.e("yk", "action move");
+                        int x = (int)event.getRawX();
+                        int y = (int)event.getRawY();
+                        mLayoutParams.x = x;
+                        mLayoutParams.y = y;
+                        mWindowManager.updateViewLayout(mFloatingButton, mLayoutParams);
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
+        mLayoutParams = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
-                1,
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                0,
                 0,
                 PixelFormat.TRANSPARENT);
-        mLayoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL |
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
-                WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED;
+        mLayoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
+        mLayoutParams.type = WindowManager.LayoutParams.TYPE_TOAST;
         mLayoutParams.gravity = Gravity.LEFT | Gravity.TOP;
         mLayoutParams.x = 100;
         mLayoutParams.y = 300;
@@ -54,8 +80,12 @@ public class Chapter8_1 extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if (id == R.id.add_btn){
+        if (id == R.id.add_btn && !hasWindow){
             showButton();
+            hasWindow = true;
+        }else if (id == R.id.remove_btn && hasWindow){
+            mWindowManager.removeView(mFloatingButton);
+            hasWindow = false;
         }
     }
 }
