@@ -1,7 +1,9 @@
 package com.example.yukai.mydefinedview.Utils;
 
 import android.content.res.TypedArray;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.WindowManager;
 
 import com.example.yukai.mydefinedview.AppManager;
 
@@ -16,6 +18,13 @@ public class DeviceUtils {
         return (int)(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 dp,
                 AppManager.getInstance().getContext().getResources().getDisplayMetrics()) + 0.5);
+    }
+
+    public static int getScreenWidth(){
+        WindowManager manager = AppManager.getInstance().getContext().getWindowManager();
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        manager.getDefaultDisplay().getMetrics(displayMetrics);
+        return displayMetrics.widthPixels;
     }
 
 }

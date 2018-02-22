@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.yukai.mydefinedview.R;
 
@@ -20,7 +21,7 @@ import com.example.yukai.mydefinedview.R;
 
 public class Chapter8_1 extends Activity implements View.OnClickListener{
 
-    private Button mFloatingButton;
+    private TextView mFloatingButton;
     private WindowManager.LayoutParams mLayoutParams;
     private WindowManager mWindowManager;
     private Button mAddBtn;
@@ -39,7 +40,7 @@ public class Chapter8_1 extends Activity implements View.OnClickListener{
 
     private void showButton(){
         mWindowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-        mFloatingButton = new Button(this);
+        mFloatingButton = new TextView(this);
         mFloatingButton.setText("floating button");
         mFloatingButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -48,7 +49,7 @@ public class Chapter8_1 extends Activity implements View.OnClickListener{
                 switch (action){
                     case MotionEvent.ACTION_DOWN:
                         Log.e("yk", "action down");
-                        return true;
+                        return false;
                     case MotionEvent.ACTION_MOVE:
                         Log.e("yk", "action move");
                         int x = (int)event.getRawX();
@@ -60,7 +61,7 @@ public class Chapter8_1 extends Activity implements View.OnClickListener{
                     default:
                         break;
                 }
-                return true;
+                return false;
             }
         });
         mLayoutParams = new WindowManager.LayoutParams(

@@ -17,4 +17,12 @@
         <!--android:layout_width="50dp"-->
         <!--android:layout_height="50dp" />-->
 
+    <TextView
+        android:id="@+id/test_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ff4689"
+        android:text="testview"
+        android:layout_alignParentRight="true"/>
+
 </RelativeLayout>
