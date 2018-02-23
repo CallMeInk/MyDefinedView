@@ -6,6 +6,8 @@ import android.widget.Toast;
 
 import com.example.yukai.mydefinedview.AppManager;
 
+import java.util.List;
+
 /**
  * Created by yukai on 2017/10/16.
  */
@@ -31,6 +33,10 @@ public class CommonUtils {
 
     public static void log(String message){
         Log.e("yk", message);
+    }
+
+    public static boolean isListEmpty(List<? extends Object> list){
+        return list == null || list.isEmpty();
     }
 
 }

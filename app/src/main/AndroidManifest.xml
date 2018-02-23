@@ -60,6 +60,7 @@
         <activity
             android:name=".MyView.MyDanmuView.MyDanmuActivity"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".BasicView.ViewPager.ViewPagerActivity"/>
 
     </application>
 

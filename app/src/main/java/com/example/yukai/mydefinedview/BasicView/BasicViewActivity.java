@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import com.example.yukai.mydefinedview.BasicView.ActivityLifeCycleTest.Activity_A;
 import com.example.yukai.mydefinedview.BasicView.AnimTest.AnimTestActivity;
@@ -12,6 +11,7 @@ import com.example.yukai.mydefinedview.BasicView.Grid.GridViewActivity;
 import com.example.yukai.mydefinedview.BasicView.PopUpWindow.PopUpWindowActivity;
 import com.example.yukai.mydefinedview.BasicView.RatingBar.RatingBarActivity;
 import com.example.yukai.mydefinedview.BasicView.RecyclerView.RecyclerViewActivity;
+import com.example.yukai.mydefinedview.BasicView.ViewPager.ViewPagerActivity;
 import com.example.yukai.mydefinedview.R;
 
 public class BasicViewActivity extends Activity implements View.OnClickListener{
@@ -26,6 +26,7 @@ public class BasicViewActivity extends Activity implements View.OnClickListener{
         (findViewById(R.id.btn_anim_test)).setOnClickListener(this);
         (findViewById(R.id.btn_rating_bar_test)).setOnClickListener(this);
         (findViewById(R.id.btn_activity_life_cycle_test)).setOnClickListener(this);
+        (findViewById(R.id.btn_view_pager_test)).setOnClickListener(this);
     }
 
     @Override
@@ -48,6 +49,9 @@ public class BasicViewActivity extends Activity implements View.OnClickListener{
             startActivity(intent);
         }else if (id == R.id.btn_activity_life_cycle_test){
             Intent intent = new Intent(this, Activity_A.class);
+            startActivity(intent);
+        }else if (id == R.id.btn_view_pager_test){
+            Intent intent = new Intent(this, ViewPagerActivity.class);
             startActivity(intent);
         }
     }
