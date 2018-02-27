@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.example.yukai.mydefinedview.ArtLearningNote.ArtTotal;
 import com.example.yukai.mydefinedview.BasicView.BasicViewActivity;
+import com.example.yukai.mydefinedview.ExternalView.ExternalViewTotalActivity;
 import com.example.yukai.mydefinedview.MyView.MyDefinedViewActivity;
 import com.example.yukai.mydefinedview.Utils.BitMapDisplayActivity;
 import com.example.yukai.mydefinedview.Utils.DeviceUtils;
@@ -29,8 +30,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         (findViewById(R.id.btn_basic_view)).setOnClickListener(this);
         (findViewById(R.id.btn_art_learning)).setOnClickListener(this);
         (findViewById(R.id.btn_bitmap_cut)).setOnClickListener(this);
+        (findViewById(R.id.btn_external_view_test)).setOnClickListener(this);
         getUserPermission();
-        Log.e("yk", DeviceUtils.getPixelFromDp(1) + "");
     }
 
     @Override
@@ -47,6 +48,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             startActivity(intent);
         }else if (id == R.id.btn_bitmap_cut){
             Intent intent = new Intent(this, BitMapDisplayActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.btn_external_view_test){
+            Intent intent = new Intent(this, ExternalViewTotalActivity.class);
             startActivity(intent);
         }
     }
