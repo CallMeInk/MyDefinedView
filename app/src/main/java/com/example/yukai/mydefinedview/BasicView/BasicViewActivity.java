@@ -11,6 +11,7 @@ import com.example.yukai.mydefinedview.BasicView.Grid.GridViewActivity;
 import com.example.yukai.mydefinedview.BasicView.PopUpWindow.PopUpWindowActivity;
 import com.example.yukai.mydefinedview.BasicView.RatingBar.RatingBarActivity;
 import com.example.yukai.mydefinedview.BasicView.RecyclerView.RecyclerViewActivity;
+import com.example.yukai.mydefinedview.BasicView.ViewGroupMeasureTest.ViewGroupMeasureTestActivity;
 import com.example.yukai.mydefinedview.BasicView.ViewPager.ViewPagerActivity;
 import com.example.yukai.mydefinedview.R;
 
@@ -27,6 +28,7 @@ public class BasicViewActivity extends Activity implements View.OnClickListener{
         (findViewById(R.id.btn_rating_bar_test)).setOnClickListener(this);
         (findViewById(R.id.btn_activity_life_cycle_test)).setOnClickListener(this);
         (findViewById(R.id.btn_view_pager_test)).setOnClickListener(this);
+        (findViewById(R.id.btn_view_group_measure_test)).setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +54,9 @@ public class BasicViewActivity extends Activity implements View.OnClickListener{
             startActivity(intent);
         }else if (id == R.id.btn_view_pager_test){
             Intent intent = new Intent(this, ViewPagerActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.btn_view_group_measure_test){
+            Intent intent = new Intent(this, ViewGroupMeasureTestActivity.class);
             startActivity(intent);
         }
     }
