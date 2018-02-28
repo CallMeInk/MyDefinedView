@@ -2,18 +2,26 @@ package com.example.yukai.mydefinedview.MyView.MyDanmuView;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
+import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
+import android.view.animation.TranslateAnimation;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.yukai.mydefinedview.AppManager;
+import com.example.yukai.mydefinedview.R;
 import com.example.yukai.mydefinedview.Utils.CommonUtils;
 import com.example.yukai.mydefinedview.Utils.DeviceUtils;
 import com.example.yukai.mydefinedview.Utils.ThreadPool;
@@ -21,39 +29,44 @@ import com.example.yukai.mydefinedview.Utils.ThreadPool;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 /**
  * Created by yukai on 2018/2/22.
  */
 
-public class MyDanmuView extends RelativeLayout{
+public class MyDanmuView extends FrameLayout{
 
-    private final static int DEFAULT_ROW_NUMBER = 6;
-    private final static int INITIAL_TIME_STAMP = -1;
-    private final static String MESSAGE_DATA = "message_data";
+    private final int ADD_BARRAGE = 1;
     private int mScreenWidth;
     private Context mContext;
     private int mRowNum;
-    private Random mRandom;
-    private HashMap<String, View> mHashMap;
-    private long timeStamp;
-    private ArrayList<String> mData;
-    private volatile boolean isStart;
+    private HashMap<String, View> mEachLineEndView;
+    private ArrayList<BarrageDataModel> mData;
     private volatile boolean cancleFlag;
-    private SendFastTip mSendFastTip;
+    private int mCurrentDisplayIndex;
+    private int mAnimationDuration;
+    private volatile int mBarrageState;
+    private boolean hasStartThread;
+    private ArrayList<View> mBarrageViewCache;
+
     private Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            Bundle bundle = msg.getData();
-            String text = null;
-            if (bundle != null){
-                text = bundle.getString(MESSAGE_DATA);
-            }
-            if (text == null){
+            if (msg == null){
                 return;
             }
-            addItemView(text, INPUT_TYPE.TYPE_OTHERS);
+            int flag = msg.what;
+            switch (flag){
+                case ADD_BARRAGE:
+                    if (checkBarrageCanSend(mCurrentDisplayIndex)){
+                        addBarrage();
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     };
 
@@ -75,18 +88,14 @@ public class MyDanmuView extends RelativeLayout{
     private void init(Context context){
         mScreenWidth = DeviceUtils.getScreenWidth();
         mContext = context;
-        mRowNum = DEFAULT_ROW_NUMBER;
-        mHashMap = new HashMap<>();
-        setBackgroundColor(Color.parseColor("#00000000"));
-        isStart = false;
-        timeStamp = INITIAL_TIME_STAMP;
+        mRowNum = BarrageConstant.DEFAULT_ROW_NUMBER;
+        mAnimationDuration = BarrageConstant.DDFAULT_ANIMATION_DURATION;
+        mCurrentDisplayIndex = 0;
+        mEachLineEndView = new HashMap<>();
+        setBackgroundColor(Color.TRANSPARENT);
+        mBarrageState = BarrageConstant.BARRAGE_STATE_INIT;
         cancleFlag = false;
-        mSendFastTip = new SendFastTip() {
-            @Override
-            public void showTip() {
-                CommonUtils.showToast("发送弹幕过快");
-            }
-        };
+        hasStartThread = false;
     }
 
     @Override
@@ -98,138 +107,130 @@ public class MyDanmuView extends RelativeLayout{
             if (view == null){
                 continue;
             }
-            RelativeLayout.LayoutParams lp = (LayoutParams) view.getLayoutParams();
-            view.layout(mScreenWidth, lp.topMargin, mScreenWidth + view.getMeasuredWidth(), lp.topMargin + view.getMeasuredHeight());
+            FrameLayout.LayoutParams lp = (LayoutParams) view.getLayoutParams();
+            view.layout(mScreenWidth,
+                    lp.topMargin,
+                    mScreenWidth + view.getMeasuredWidth(),
+                    lp.topMargin + view.getMeasuredHeight());
         }
     }
 
-    public void addItemView(String text, int type){
-        if (type == INPUT_TYPE.TYPE_USER){
-            long currentTime = System.currentTimeMillis();
-            if (timeStamp == INITIAL_TIME_STAMP || currentTime - timeStamp > 1000){
-                timeStamp = currentTime;
-            }else{
-                if (mSendFastTip != null){
-                    mSendFastTip.showTip();
-                }
-                return;
-            }
+    private boolean checkBarrageCanSend(int index){
+        if (mEachLineEndView == null){
+            return false;
         }
-        createDanmuItemView(text, type);
+        int row = index % mRowNum;
+        String rowKey = String.valueOf(row);
+        if (!mEachLineEndView.containsKey(rowKey)){
+            return true;
+        }
+        View formerView = mEachLineEndView.get(rowKey);
+        Log.e("yk", "getx::" + formerView.getX());
+        return formerView == null ||
+                formerView.getX() + formerView.getMeasuredWidth() < mScreenWidth;
     }
 
-    private void createDanmuItemView(String text, int type){
-        if (mContext == null){
+    private void addBarrage(){
+        if (mData == null || mCurrentDisplayIndex >= mData.size()){
             return;
         }
-        final TextView textView = new TextView(mContext);
-        int color = type == INPUT_TYPE.TYPE_USER ? Color.parseColor("#ff0000") : Color.parseColor("#000000");
-        textView.setTextColor(color);
-        textView.setTextSize(15);
-        textView.setText(text);
+        int row = mCurrentDisplayIndex % mRowNum;
+        String rowKey = String.valueOf(row);
+        BarrageDataModel model = mData.get(mCurrentDisplayIndex);
+        final View view = generateViewByModel(model);
+        mEachLineEndView.put(rowKey, view);
+        mCurrentDisplayIndex++;
         int measureWidth  = View.MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
         int measureHeight = View.MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
-        textView.measure(measureWidth, measureHeight);
-        int width = textView.getMeasuredWidth();
-        int height = textView.getMeasuredHeight();
-        int row = 0;
-        synchronized (this){
-            row = getRandomNumber();
-            while (!isRowLegal(row, textView)){
-                row = getRandomNumber();
-            }
-        }
-        RelativeLayout.LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        view.measure(measureWidth, measureHeight);
+        int width = view.getMeasuredWidth();
+        int height = view.getMeasuredHeight();
+        FrameLayout.LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         layoutParams.topMargin = row * (height + DeviceUtils.getPixelFromDp(10));
-        textView.setLayoutParams(layoutParams);
-        textView.setPadding(DeviceUtils.getPixelFromDp(15), DeviceUtils.getPixelFromDp(2), DeviceUtils.getPixelFromDp(15), DeviceUtils.getPixelFromDp(2));
-        addView(textView);
-        ViewPropertyAnimator animator = textView.animate().translationXBy(-(mScreenWidth + width + 100));
-        animator.setDuration(5000);
+        view.setLayoutParams(layoutParams);
+        addView(view);
+
+        final ViewPropertyAnimator animator = view.animate().translationXBy(-(mScreenWidth + width + 100));
+        animator.setDuration(mAnimationDuration);
         animator.setInterpolator(new LinearInterpolator());
         animator.setListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
-                MyDanmuView.this.removeView(textView);
+                MyDanmuView.this.removeView(view);
+                view.clearAnimation();
+                view.layout(mScreenWidth, 0, mScreenWidth + view.getMeasuredWidth(), view.getMeasuredHeight());
+                mBarrageViewCache.add(view);
             }
         });
         animator.start();
     }
 
-    private Random getRandomInstance(){
-        if (mRandom == null){
-            mRandom = new Random();
-        }
-        return mRandom;
-    }
-
-    private int getRandomNumber(){
-        return getRandomInstance().nextInt(100) % mRowNum;
-    }
-
-    private boolean isRowLegal(int row, View view){
-        if (mHashMap == null){
-            return false;
-        }
-        if (row < 0 && row >= mRowNum){
-            return false;
-        }
-        String index = String.valueOf(row);
-        View formerView = mHashMap.get(index);
-        if (mHashMap.containsKey(index) && formerView != null){
-            if (formerView.getX() + formerView.getMeasuredWidth() < mScreenWidth){
-                mHashMap.remove(index);
-                mHashMap.put(index, view);
-                return true;
-            }else{
-                return false;
-            }
-        }else{
-            mHashMap.put(index, view);
-            return true;
-        }
-    }
-
-    public void setData(ArrayList<String> data){
-        if (data == null || isStart){
+    public void setData(ArrayList<BarrageDataModel> data){
+        if (data == null ||
+                mBarrageState == BarrageConstant.BARRAGE_STATE_PAUSE ||
+                mBarrageState == BarrageConstant.BARRAGE_STATE_START){
             return;
         }
         if (mData == null){
-            mData = new ArrayList<String>();
+            mData = new ArrayList<BarrageDataModel>();
         }
         mData.clear();
         mData.addAll(data);
     }
 
     public void start(){
-        if (isStart){
-            return;
+        if (mBarrageState == BarrageConstant.BARRAGE_STATE_INIT){
+            start(0);
+        }else if (mBarrageState == BarrageConstant.BARRAGE_STATE_PAUSE){
+            start(mCurrentDisplayIndex + 1);
         }
-        isStart = true;
+    }
+
+    private void start(int startIndex){
+        mCurrentDisplayIndex = startIndex;
+        mBarrageState = BarrageConstant.BARRAGE_STATE_START;
         cancleFlag = false;
+        if (!hasStartThread){
+            startTimerThread();
+            hasStartThread = true;
+        }
+    }
+
+    private void startTimerThread(){
         ThreadPool.getInstance().execute(new Runnable() {
             @Override
             public void run() {
-                if (mData == null){
-                    return;
-                }
-                int count = mData.size();
-                int index = 0;
-                while (!cancleFlag && index < count){
-                    Message message = Message.obtain();
-                    Bundle bundle = new Bundle();
-                    bundle.putString(MESSAGE_DATA, mData.get(index));
-                    message.setData(bundle);
-                    mHandler.sendMessage(message);
-                    index++;
+                while (!cancleFlag){
+                    if (mBarrageState == BarrageConstant.BARRAGE_STATE_START && mHandler != null){
+                        Message.obtain(mHandler, ADD_BARRAGE).sendToTarget();
+                    }
                     try{
                         Thread.sleep(500);
                     }catch (Exception e){
                         e.printStackTrace();
                     }
                 }
+                hasStartThread = false;
             }
         });
+    }
+
+    private synchronized View generateViewByModel(BarrageDataModel model){
+        if (mBarrageViewCache == null){
+            mBarrageViewCache = new ArrayList<View>();
+        }
+        View view = LayoutInflater.from(AppManager.getInstance().getContext()).inflate(R.layout.barrage_item_view, null, false);
+        TextView textView = (TextView) view.findViewById(R.id.barrage_tv);
+        textView.setTextSize(model.textSize);
+        textView.setTextColor(model.testColor);
+        textView.setText(model.text);
+        return view;
+    }
+
+    public void pause(){
+        if (mBarrageState == BarrageConstant.BARRAGE_STATE_START){
+            mBarrageState = BarrageConstant.BARRAGE_STATE_PAUSE;
+        }
     }
 
     public void onDestroy(){
@@ -240,25 +241,33 @@ public class MyDanmuView extends RelativeLayout{
     }
 
     public void setRowNumber(int rowNumber){
+        if (mBarrageState == BarrageConstant.BARRAGE_STATE_START){
+            return;
+        }
         mRowNum = rowNumber;
     }
 
-    public void cancel(){
-        cancleFlag = true;
-        isStart = false;
+    public void setAnimationDuration(int duration){
+        if (mBarrageState == BarrageConstant.BARRAGE_STATE_START){
+            return;
+        }
+        mAnimationDuration = duration;
     }
 
-    public void setSendFastTip(SendFastTip sendFastTip){
-        mSendFastTip = sendFastTip;
+    public void hide(){
+        setVisibility(View.INVISIBLE);
     }
 
-    public interface INPUT_TYPE{
-        int TYPE_OTHERS = 0;
-        int TYPE_USER = 1;
+    public void show(){
+        setVisibility(View.VISIBLE);
     }
 
-    public interface SendFastTip{
-        void showTip();
+    public int getCurrentDisplayIndex(){
+        return mCurrentDisplayIndex;
+    }
+
+    public int getBarrageState(){
+        return mBarrageState;
     }
 
 }

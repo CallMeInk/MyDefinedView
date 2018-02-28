@@ -24,7 +24,7 @@ public class MyDanmuActivity extends Activity{
     private MyDanmuView mMyDanmuView;
     private EditText mEditText;
     private Button mButton;
-    private ArrayList<String> mData;
+    private ArrayList<BarrageDataModel> mData;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,17 +41,17 @@ public class MyDanmuActivity extends Activity{
                 if (mMyDanmuView == null || mEditText == null){
                     return;
                 }
-                mMyDanmuView.addItemView(mEditText.getText().toString(), MyDanmuView.INPUT_TYPE.TYPE_USER);
+                //mMyDanmuView.addItemView(mEditText.getText().toString(), MyDanmuView.INPUT_TYPE.TYPE_USER);
             }
         });
 
-        findViewById(R.id.cancel_button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.pause_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mMyDanmuView == null){
                     return;
                 }
-                mMyDanmuView.cancel();
+                mMyDanmuView.pause();
             }
         });
 
@@ -68,11 +68,17 @@ public class MyDanmuActivity extends Activity{
 
     private void initData(){
         if (mData == null){
-            mData = new ArrayList<String>();
+            mData = new ArrayList<BarrageDataModel>();
         }
         mData.clear();
         for (int i = 0; i < 1000; i++){
-            mData.add("this is " + i + "th danmu");
+            BarrageDataModel model = new BarrageDataModel();
+            if (i % 5 == 0){
+                model.text = "akjsdhfajshfajksdfhhfadfhaldf";
+            }else{
+                model.text = "this is " + i + "th danmu";
+            }
+            mData.add(model);
         }
     }
 
