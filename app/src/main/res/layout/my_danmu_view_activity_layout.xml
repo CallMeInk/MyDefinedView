@@ -53,6 +53,20 @@
             android:layout_height="wrap_content"
             android:text="pause" />
 
+        <Button
+            android:id="@+id/hide_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="hide" />
+
+        <Button
+            android:id="@+id/show_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="show" />
+
     </LinearLayout>
 
 </RelativeLayout>

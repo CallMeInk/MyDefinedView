@@ -64,6 +64,26 @@ public class MyDanmuActivity extends Activity{
                 mMyDanmuView.start();
             }
         });
+
+        findViewById(R.id.hide_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mMyDanmuView == null){
+                    return;
+                }
+                mMyDanmuView.hide();
+            }
+        });
+
+        findViewById(R.id.show_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mMyDanmuView == null){
+                    return;
+                }
+                mMyDanmuView.show();
+            }
+        });
     }
 
     private void initData(){

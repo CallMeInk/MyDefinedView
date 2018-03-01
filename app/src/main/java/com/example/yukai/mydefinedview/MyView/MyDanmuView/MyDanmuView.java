@@ -44,7 +44,6 @@ public class MyDanmuView extends FrameLayout{
     private int mRowNum;
     private HashMap<String, View> mEachLineEndView;
     private ArrayList<BarrageDataModel> mData;
-    private volatile boolean cancleFlag;
     private int mCurrentDisplayIndex;
     private int mAnimationDuration;
     private volatile int mBarrageState;
@@ -60,9 +59,10 @@ public class MyDanmuView extends FrameLayout{
             int flag = msg.what;
             switch (flag){
                 case ADD_BARRAGE:
-                    if (checkBarrageCanSend(mCurrentDisplayIndex)){
+                    if (checkBarrageCanSend(mCurrentDisplayIndex) && mBarrageState == BarrageConstant.BARRAGE_STATE_START){
                         addBarrage();
                     }
+                    this.sendMessageDelayed(Message.obtain(mHandler, ADD_BARRAGE), 500);
                     break;
                 default:
                     break;
@@ -94,7 +94,6 @@ public class MyDanmuView extends FrameLayout{
         mEachLineEndView = new HashMap<>();
         setBackgroundColor(Color.TRANSPARENT);
         mBarrageState = BarrageConstant.BARRAGE_STATE_INIT;
-        cancleFlag = false;
         hasStartThread = false;
     }
 
@@ -125,7 +124,6 @@ public class MyDanmuView extends FrameLayout{
             return true;
         }
         View formerView = mEachLineEndView.get(rowKey);
-        Log.e("yk", "getx::" + formerView.getX());
         return formerView == null ||
                 formerView.getX() + formerView.getMeasuredWidth() < mScreenWidth;
     }
@@ -189,30 +187,10 @@ public class MyDanmuView extends FrameLayout{
     private void start(int startIndex){
         mCurrentDisplayIndex = startIndex;
         mBarrageState = BarrageConstant.BARRAGE_STATE_START;
-        cancleFlag = false;
-        if (!hasStartThread){
-            startTimerThread();
-            hasStartThread = true;
+        if (mHandler != null){
+            mHandler.removeMessages(ADD_BARRAGE);
+            mHandler.sendEmptyMessage(ADD_BARRAGE);
         }
-    }
-
-    private void startTimerThread(){
-        ThreadPool.getInstance().execute(new Runnable() {
-            @Override
-            public void run() {
-                while (!cancleFlag){
-                    if (mBarrageState == BarrageConstant.BARRAGE_STATE_START && mHandler != null){
-                        Message.obtain(mHandler, ADD_BARRAGE).sendToTarget();
-                    }
-                    try{
-                        Thread.sleep(500);
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-                hasStartThread = false;
-            }
-        });
     }
 
     private synchronized View generateViewByModel(BarrageDataModel model){
@@ -230,6 +208,9 @@ public class MyDanmuView extends FrameLayout{
     public void pause(){
         if (mBarrageState == BarrageConstant.BARRAGE_STATE_START){
             mBarrageState = BarrageConstant.BARRAGE_STATE_PAUSE;
+            if (mHandler != null){
+                mHandler.removeMessages(ADD_BARRAGE);
+            }
         }
     }
 
@@ -237,7 +218,6 @@ public class MyDanmuView extends FrameLayout{
         if (mHandler != null){
             mHandler.removeCallbacksAndMessages(null);
         }
-        cancleFlag = true;
     }
 
     public void setRowNumber(int rowNumber){
@@ -260,6 +240,16 @@ public class MyDanmuView extends FrameLayout{
 
     public void show(){
         setVisibility(View.VISIBLE);
+    }
+
+    public void reset(){
+        if (mData != null){
+            mData.clear();
+        }
+        if (mHandler != null){
+            mHandler.removeMessages(ADD_BARRAGE);
+        }
+        mBarrageState = BarrageConstant.BARRAGE_STATE_INIT;
     }
 
     public int getCurrentDisplayIndex(){
