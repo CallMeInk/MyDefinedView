@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.example.yukai.mydefinedview.ArtLearningNote.chapter10_2.Chapter10_2;
 import com.example.yukai.mydefinedview.ArtLearningNote.chapter3_1.Chapter3_1;
 import com.example.yukai.mydefinedview.ArtLearningNote.chapter3_2.Chapter3_2;
 import com.example.yukai.mydefinedview.ArtLearningNote.chapter3_3.Chapter3_3;
@@ -32,6 +33,7 @@ public class ArtTotal extends Activity implements View.OnClickListener{
         (findViewById(R.id.btn_5_1)).setOnClickListener(this);
         (findViewById(R.id.btn_6_1)).setOnClickListener(this);
         (findViewById(R.id.btn_8_1)).setOnClickListener(this);
+        (findViewById(R.id.btn_10_2)).setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +59,9 @@ public class ArtTotal extends Activity implements View.OnClickListener{
             startActivity(intent);
         }else if (id == R.id.btn_8_1){
             Intent intent = new Intent(this, Chapter8_1.class);
+            startActivity(intent);
+        }else if (id == R.id.btn_10_2){
+            Intent intent = new Intent(this, Chapter10_2.class);
             startActivity(intent);
         }
     }
