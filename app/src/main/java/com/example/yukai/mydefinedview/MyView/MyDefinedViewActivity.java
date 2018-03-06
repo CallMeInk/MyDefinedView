@@ -11,6 +11,7 @@ import com.example.yukai.mydefinedview.MyView.MyCircleRatingView.MyCircleRatingV
 import com.example.yukai.mydefinedview.MyView.MyDanmuView.MyDanmuActivity;
 import com.example.yukai.mydefinedview.MyView.MyMediaRectView.MyMediaRectViewActivity;
 import com.example.yukai.mydefinedview.MyView.MySimpleView.MySimpleViewActivity;
+import com.example.yukai.mydefinedview.MyView.MySwitchView.SwitchTestActivity;
 import com.example.yukai.mydefinedview.MyView.MyTextView.MyTextViewActivity;
 import com.example.yukai.mydefinedview.MyView.MyTopBarView.MyTopBarViewActivity;
 import com.example.yukai.mydefinedview.R;
@@ -29,6 +30,7 @@ public class MyDefinedViewActivity extends Activity implements View.OnClickListe
         (findViewById(R.id.my_simple_view_btn)).setOnClickListener(this);
         (findViewById(R.id.my_auto_layout)).setOnClickListener(this);
         (findViewById(R.id.my_danmu_layout)).setOnClickListener(this);
+        (findViewById(R.id.my_kyswitch_layout)).setOnClickListener(this);
     }
 
     @Override
@@ -54,6 +56,9 @@ public class MyDefinedViewActivity extends Activity implements View.OnClickListe
             startActivity(intent);
         }else if (id == R.id.my_danmu_layout){
             Intent intent = new Intent(MyDefinedViewActivity.this, MyDanmuActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.my_kyswitch_layout){
+            Intent intent = new Intent(MyDefinedViewActivity.this, SwitchTestActivity.class);
             startActivity(intent);
         }
     }

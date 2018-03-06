@@ -65,6 +65,8 @@
         <activity android:name=".ExternalView.ExternalViewTotalActivity"/>
         <activity android:name=".ExternalView.BiliBiliDanmuView.BiliBiliDanmuViewActivity"/>
         <activity android:name=".ArtLearningNote.chapter10_2.Chapter10_2"/>
+        <activity android:name=".BasicView.ToggleButtonTest.ToggleButtonActivity"/>
+        <activity android:name=".MyView.MySwitchView.SwitchTestActivity"/>
 
     </application>
 

@@ -47,4 +47,10 @@
         android:layout_height="wrap_content"
         android:text="my_danmu_layout"/>
 
+    <Button
+        android:id="@+id/my_kyswitch_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="my_kyswitch_layout"/>
+
 </LinearLayout>

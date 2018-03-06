@@ -26,4 +26,9 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="switchTheme" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/switch_text_seletor</item>
+        <item name="android:textSize">9dp</item>
+    </style>
 </resources>
