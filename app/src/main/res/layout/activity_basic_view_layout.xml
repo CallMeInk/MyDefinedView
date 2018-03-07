@@ -59,4 +59,10 @@
         android:layout_height="wrap_content"
         android:text="toggle btn test"/>
 
+    <Button
+        android:id="@+id/btn_text_view_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn text view test"/>
+
 </LinearLayout>

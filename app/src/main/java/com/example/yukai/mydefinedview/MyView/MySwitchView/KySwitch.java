@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.MotionEvent;
@@ -27,7 +26,7 @@ public class KySwitch extends View implements OnGestureListener{
     private int thumbColor = 0xFFFFFFFF;
     private int onTextColor = 0xFF4289FF;
     private int offTextColor = 0xFF999999;
-    private int textSize = DeviceUtils.getPixelFromDp(18);
+    private int textSize = DeviceUtils.getPixelFromDp(9);
 
     private int thumbMarginLeft;
     private int thumbMarginTop;
@@ -104,16 +103,41 @@ public class KySwitch extends View implements OnGestureListener{
     }
 
     private void drawBackground(Canvas canvas){
-        int backgroundColor = (value == ON) ? onBgColor : offBgColor;
-        RectF rectF = new RectF();
-        rectF.left = paddingLeft;
-        rectF.top = paddingTop;
-        rectF.right = getWidth() - paddingRight;
-        rectF.bottom = getHeight() - paddingBottom;
-        paint.setAntiAlias(true);
-        paint.setColor(backgroundColor);
-        int radius = (getHeight() - paddingTop - paddingBottom) / 2;
-        canvas.drawRoundRect(rectF, radius, radius, paint);
+        if (value == ON){
+            RectF rectF = new RectF();
+            rectF.left = paddingLeft;
+            rectF.top = paddingTop;
+            rectF.right = getWidth() - paddingRight;
+            rectF.bottom = getHeight() - paddingBottom;
+            paint.setAntiAlias(true);
+            paint.setColor(onBgColor);
+            int radius = (getHeight() - paddingTop - paddingBottom) / 2;
+            canvas.drawRoundRect(rectF, radius, radius, paint);
+        }else{
+            int strokeWidth = 1;
+
+            RectF rectF = new RectF();
+            rectF.left = paddingLeft + strokeWidth;
+            rectF.top = paddingTop + strokeWidth;
+            rectF.right = getWidth() - paddingRight - strokeWidth;
+            rectF.bottom = getHeight() - paddingBottom - strokeWidth;
+
+            RectF strokeRectF = new RectF();
+            strokeRectF.left = rectF.left - strokeWidth;
+            strokeRectF.top = rectF.top - strokeWidth;
+            strokeRectF.right = rectF.right + strokeWidth;
+            strokeRectF.bottom = rectF.bottom + strokeWidth;
+
+            int strokeColor = 0xffffffff;
+            paint.setAntiAlias(true);
+            paint.setColor(strokeColor);
+            int strokeRadius = (getHeight() - paddingTop - paddingBottom) / 2;
+            canvas.drawRoundRect(strokeRectF, strokeRadius, strokeRadius, paint);
+
+            paint.setColor(offBgColor);
+            int radius = (getHeight() - paddingTop - paddingBottom) / 2 - strokeWidth;
+            canvas.drawRoundRect(rectF, radius, radius, paint);
+        }
     }
 
     private void drawThumb(Canvas canvas){
@@ -141,8 +165,8 @@ public class KySwitch extends View implements OnGestureListener{
         canvas.drawArc(rectF, 0, 360, false, paint);
         int textColor = value == ON ? onTextColor : offTextColor;
         paint.setColor(textColor);
-        paint.setTextSize(DeviceUtils.getPixelFromDp(18));
-        canvas.drawText("弹", getThumbRadius() * 0.4f + rectF.left, getThumbRadius() * 1.4f, paint);
+        paint.setTextSize(DeviceUtils.getPixelFromDp(9));
+        canvas.drawText("弹", getThumbRadius() * 0.35f + rectF.left, getThumbRadius() * 1.4f, paint);
     }
 
     private int getMinThumbLeft(){
@@ -177,33 +201,28 @@ public class KySwitch extends View implements OnGestureListener{
 
     @Override
     public boolean onDown(MotionEvent event) {
-        Log.e("yk", "onDown");
         downEventHandler();
         return true;
     }
 
     @Override
     public boolean onFling(MotionEvent event1, MotionEvent event2, float arg2, float arg3) {
-        Log.e("yk", "onFling");
         flingEventHandler((int)event1.getX(), (int)event2.getX());
         return true;
     }
 
     @Override
     public void onLongPress(MotionEvent event) {
-        Log.e("yk", "onLongPress");
     }
 
     @Override
     public boolean onScroll(MotionEvent event1, MotionEvent event2, float arg2, float arg3) {
-        Log.e("yk", "onScroll");
         scrollEventHandler((int)event1.getX(), (int)event2.getX());
         return true;
     }
 
     @Override
     public void onShowPress(MotionEvent event) {
-        Log.e("yk", "onShowPress");
     }
 
     @Override
