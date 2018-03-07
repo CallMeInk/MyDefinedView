@@ -17,6 +17,7 @@ import com.example.yukai.mydefinedview.BasicView.BasicViewActivity;
 import com.example.yukai.mydefinedview.ExternalView.ExternalViewTotalActivity;
 import com.example.yukai.mydefinedview.MyView.MyDefinedViewActivity;
 import com.example.yukai.mydefinedview.Utils.BitMapDisplayActivity;
+import com.example.yukai.mydefinedview.Utils.CommonUtils;
 import com.example.yukai.mydefinedview.Utils.DeviceUtils;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -32,6 +33,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         (findViewById(R.id.btn_bitmap_cut)).setOnClickListener(this);
         (findViewById(R.id.btn_external_view_test)).setOnClickListener(this);
         getUserPermission();
+        LogInfos();
     }
 
     @Override
@@ -84,6 +86,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + MainActivity.this.getPackageName()));
 //            startActivity(intent);
 //        }
+
+    }
+
+    private void LogInfos(){
+        CommonUtils.log("Runtime.getRuntime().maxMemory():: " + Runtime.getRuntime().maxMemory());
+        CommonUtils.log("Runtime.getRuntime().maxMemory():: " + Runtime.getRuntime().maxMemory() / 1024);
+        CommonUtils.log("Runtime.getRuntime().maxMemory():: " + Runtime.getRuntime().maxMemory() / 1024 / 1024);
 
     }
 }

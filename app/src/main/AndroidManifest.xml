@@ -68,6 +68,7 @@
         <activity android:name=".BasicView.ToggleButtonTest.ToggleButtonActivity"/>
         <activity android:name=".MyView.MySwitchView.SwitchTestActivity"/>
         <activity android:name=".BasicView.TextViewTest.TextViewActivity"/>
+        <activity android:name=".ArtLearningNote.chapter12_1.ImageLoaderTextActivity"/>
 
     </application>
 

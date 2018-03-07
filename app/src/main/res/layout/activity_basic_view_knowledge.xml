@@ -53,4 +53,10 @@
         android:layout_height="wrap_content"
         android:text="Chapter 10 android message"/>
 
+    <Button
+        android:id="@+id/btn_12_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chapter 12 ImageLoader"/>
+
 </LinearLayout>

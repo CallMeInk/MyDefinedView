@@ -33,6 +33,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
     compile 'com.zcw:togglebutton-library:1.0.0'
+    compile 'com.jakewharton:disklrucache:2.0.2'
 }
 repositories {
     mavenCentral()

@@ -1,6 +1,8 @@
 package com.example.yukai.mydefinedview.Utils;
 
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,6 +12,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
+import android.util.Log;
 
 /**
  * Created by yukai on 2018/1/25.
@@ -98,6 +101,38 @@ public class BitmapUtils {
         canvas.drawCircle(circleCenter + 4, circleCenter + 4, circleCenter - 4, paint);
 
         return resultBitMap;
+    }
+
+    public static Bitmap decodeSampleBitmapFromResource(Resources resources, int resId, int requiredWidth, int requiredHeight){
+        //first decode with inJustDecodeBounds=true to check dimensions
+        //inJustDecodeBounds=true 解析图片时只会解析道原始宽高信息，并不会真正加载图片
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        // it's important
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(resources, resId, options);
+
+        //calculate inSampleSize
+        options.inSampleSize =calculateInSampleSize(options, requiredWidth, requiredHeight);
+        Log.e("yk", "inSampleSize::" + options.inSampleSize);
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeResource(resources, resId, options);
+    }
+
+    public static int calculateInSampleSize(BitmapFactory.Options options, int requredWidth, int requiredHeight){
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+
+        int inSampleSize = 1;
+        if (height > requiredHeight || width > requredWidth){
+            final int halfHeight = height >> 1;
+            final int halfWidth = width >> 1;
+            while((halfHeight / inSampleSize) >= requiredHeight ||
+                    (halfWidth / inSampleSize) >= requredWidth){
+                inSampleSize *= 2;
+            }
+        }
+
+        return inSampleSize;
     }
 
 
