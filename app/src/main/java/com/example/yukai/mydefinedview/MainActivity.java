@@ -82,6 +82,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 6);
         }
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, 7);
+        }
+
 //        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SYSTEM_ALERT_WINDOW) != PackageManager.PERMISSION_GRANTED){
 //            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + MainActivity.this.getPackageName()));
 //            startActivity(intent);
@@ -93,6 +97,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         CommonUtils.log("Runtime.getRuntime().maxMemory():: " + Runtime.getRuntime().maxMemory());
         CommonUtils.log("Runtime.getRuntime().maxMemory():: " + Runtime.getRuntime().maxMemory() / 1024);
         CommonUtils.log("Runtime.getRuntime().maxMemory():: " + Runtime.getRuntime().maxMemory() / 1024 / 1024);
-
+        CommonUtils.log("internet permision::" + (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED));
     }
 }

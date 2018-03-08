@@ -14,6 +14,8 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.util.Log;
 
+import java.io.FileDescriptor;
+
 /**
  * Created by yukai on 2018/1/25.
  */
@@ -126,13 +128,23 @@ public class BitmapUtils {
         if (height > requiredHeight || width > requredWidth){
             final int halfHeight = height >> 1;
             final int halfWidth = width >> 1;
-            while((halfHeight / inSampleSize) >= requiredHeight ||
-                    (halfWidth / inSampleSize) >= requredWidth){
+            while(((halfHeight / inSampleSize) >= requiredHeight || (halfWidth / inSampleSize) >= requredWidth) &&
+                    requiredHeight * requredWidth != 0){
                 inSampleSize *= 2;
             }
         }
 
         return inSampleSize;
+    }
+
+    public static Bitmap decodeSampledBitmapFromFileDescriptor(FileDescriptor fd, int requiredWidth, int requiredHeight){
+        //first decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFileDescriptor(fd, null, options);
+        options.inSampleSize = calculateInSampleSize(options, requiredWidth, requiredHeight);
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeFileDescriptor(fd, null, options);
     }
 
 
