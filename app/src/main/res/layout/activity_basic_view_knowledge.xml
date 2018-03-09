@@ -59,4 +59,10 @@
         android:layout_height="wrap_content"
         android:text="Chapter 12 ImageLoader"/>
 
+    <Button
+        android:id="@+id/btn_13_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chapter 13 综合技术"/>
+
 </LinearLayout>

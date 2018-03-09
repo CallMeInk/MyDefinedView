@@ -5,6 +5,8 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.yukai.mydefinedview.ArtLearningNote.chapter13_1.CrashHandler;
+
 /**
  * Created by yukai on 2018/2/4.
  */
@@ -14,6 +16,8 @@ public class MyApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        CrashHandler crashHandler = CrashHandler.getsInstance();
+        crashHandler.init(this);
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
