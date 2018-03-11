@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.yukai.mydefinedview.BasicView.ActivityLifeCycleTest.Activity_A;
 import com.example.yukai.mydefinedview.BasicView.AnimTest.AnimTestActivity;
 import com.example.yukai.mydefinedview.BasicView.Grid.GridViewActivity;
 import com.example.yukai.mydefinedview.BasicView.PopUpWindow.PopUpWindowActivity;
+import com.example.yukai.mydefinedview.BasicView.ProgressBar.ProgressBarActivity;
 import com.example.yukai.mydefinedview.BasicView.RatingBar.RatingBarActivity;
 import com.example.yukai.mydefinedview.BasicView.RecyclerView.RecyclerViewActivity;
 import com.example.yukai.mydefinedview.BasicView.TextViewTest.TextViewActivity;
@@ -33,6 +35,7 @@ public class BasicViewActivity extends Activity implements View.OnClickListener{
         (findViewById(R.id.btn_view_group_measure_test)).setOnClickListener(this);
         findViewById(R.id.btn_toggle_test).setOnClickListener(this);
         findViewById(R.id.btn_text_view_test).setOnClickListener(this);
+        findViewById(R.id.btn_progress_bar_test).setOnClickListener(this);
     }
 
     @Override
@@ -67,6 +70,9 @@ public class BasicViewActivity extends Activity implements View.OnClickListener{
             startActivity(intent);
         }else if (id == R.id.btn_text_view_test){
             Intent intent = new Intent(this, TextViewActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.btn_progress_bar_test){
+            Intent intent = new Intent(this, ProgressBarActivity.class);
             startActivity(intent);
         }
     }

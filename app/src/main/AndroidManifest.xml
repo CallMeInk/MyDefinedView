@@ -75,6 +75,7 @@
         <activity android:name=".BasicView.TextViewTest.TextViewActivity"/>
         <activity android:name=".ArtLearningNote.chapter12_1.ImageLoaderTextActivity"/>
         <activity android:name=".ArtLearningNote.chapter13_1.Chapter13_1_Activity"/>
+        <activity android:name=".BasicView.ProgressBar.ProgressBarActivity"/>
 
     </application>
 

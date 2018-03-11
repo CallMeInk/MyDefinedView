@@ -65,4 +65,10 @@
         android:layout_height="wrap_content"
         android:text="btn text view test"/>
 
+    <Button
+        android:id="@+id/btn_progress_bar_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn progress bar test"/>
+
 </LinearLayout>
