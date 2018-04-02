@@ -40,4 +40,13 @@
         android:shadowRadius="3"
         android:background="#ff0000"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textStyle="normal"
+        android:text="s阿肯会发生酒店和发放辣口水鸡s阿肯会发生酒店和发放辣口水鸡s阿肯会发生酒店和发放辣口水鸡s阿肯会发生酒店和发放辣口水鸡"
+        android:textSize="20dp"
+        android:textColor="#000000"/>
+
 </LinearLayout>
