@@ -1,80 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/btn_recycler_view"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="RECYCLER VIEW"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_grid_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="GRID VIEW"/>
+        <Button
+            android:id="@+id/btn_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RECYCLER VIEW"/>
 
-    <Button
-        android:id="@+id/btn_pop_up_window"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="POPUP WINDOW"/>
+        <Button
+            android:id="@+id/btn_grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GRID VIEW"/>
 
-    <Button
-        android:id="@+id/btn_anim_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ANIMATION TEST"/>
+        <Button
+            android:id="@+id/btn_pop_up_window"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="POPUP WINDOW"/>
 
-    <Button
-        android:id="@+id/btn_rating_bar_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="rating bar TEST"/>
+        <Button
+            android:id="@+id/btn_anim_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ANIMATION TEST"/>
 
-    <Button
-        android:id="@+id/btn_activity_life_cycle_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="activity life cycle test"/>
+        <Button
+            android:id="@+id/btn_rating_bar_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="rating bar TEST"/>
 
-    <Button
-        android:id="@+id/btn_view_pager_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="viewpager test"/>
+        <Button
+            android:id="@+id/btn_activity_life_cycle_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="activity life cycle test"/>
 
-    <Button
-        android:id="@+id/btn_view_group_measure_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="view group measure test"/>
+        <Button
+            android:id="@+id/btn_view_pager_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="viewpager test"/>
 
-    <Button
-        android:id="@+id/btn_toggle_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="toggle btn test"/>
+        <Button
+            android:id="@+id/btn_view_group_measure_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="view group measure test"/>
 
-    <Button
-        android:id="@+id/btn_text_view_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="btn text view test"/>
+        <Button
+            android:id="@+id/btn_toggle_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="toggle btn test"/>
 
-    <Button
-        android:id="@+id/btn_progress_bar_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="btn progress bar test"/>
+        <Button
+            android:id="@+id/btn_text_view_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="btn text view test"/>
 
-    <Button
-        android:id="@+id/btn_fragment_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="btn fragment test"/>
+        <Button
+            android:id="@+id/btn_progress_bar_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="btn progress bar test"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_fragment_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="btn fragment test"/>
+
+        <Button
+            android:id="@+id/btn_image_span_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="btn_image_span_test"/>
+
+    </LinearLayout>
+</ScrollView>

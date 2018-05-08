@@ -34,4 +34,10 @@
         android:layout_height="wrap_content"
         android:text="external view test"/>
 
+    <Button
+        android:id="@+id/btn_list_view_anim_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="work test"/>
+
 </LinearLayout>

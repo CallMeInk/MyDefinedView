@@ -12,27 +12,45 @@
 
         <Button
             android:id="@+id/btn_alpha"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="alpha"/>
 
         <Button
             android:id="@+id/btn_scale"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="scale"/>
 
         <Button
             android:id="@+id/btn_rotate"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="rotate"/>
 
         <Button
             android:id="@+id/btn_trans"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="trans"/>
+
+        <Button
+            android:id="@+id/btn_pause"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="pause"/>
+
+        <Button
+            android:id="@+id/btn_resume"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="resume"/>
 
     </LinearLayout>
 

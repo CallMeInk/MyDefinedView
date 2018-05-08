@@ -78,6 +78,9 @@
         <activity android:name=".BasicView.ProgressBar.ProgressBarActivity"/>
         <activity android:name=".BasicView.FragmentAndActivityTest.FragmentActivity1"/>
         <activity android:name=".BasicView.FragmentAndActivityTest.BaseActivity"/>
+        <activity android:name=".BasicView.ImageSpanTest.ImageSpanActivity"/>
+        <activity android:name=".WorkTest.ListViewAnim.ListViewAnimActivity"/>
+        <activity android:name=".WorkTest.WorkTest"/>
     </application>
 
 </manifest>

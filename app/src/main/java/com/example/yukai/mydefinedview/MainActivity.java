@@ -4,12 +4,9 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.View;
 
 import com.example.yukai.mydefinedview.ArtLearningNote.ArtTotal;
@@ -18,7 +15,8 @@ import com.example.yukai.mydefinedview.ExternalView.ExternalViewTotalActivity;
 import com.example.yukai.mydefinedview.MyView.MyDefinedViewActivity;
 import com.example.yukai.mydefinedview.Utils.BitMapDisplayActivity;
 import com.example.yukai.mydefinedview.Utils.CommonUtils;
-import com.example.yukai.mydefinedview.Utils.DeviceUtils;
+import com.example.yukai.mydefinedview.WorkTest.ListViewAnim.ListViewAnimActivity;
+import com.example.yukai.mydefinedview.WorkTest.WorkTest;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -32,6 +30,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         (findViewById(R.id.btn_art_learning)).setOnClickListener(this);
         (findViewById(R.id.btn_bitmap_cut)).setOnClickListener(this);
         (findViewById(R.id.btn_external_view_test)).setOnClickListener(this);
+        findViewById(R.id.btn_list_view_anim_test).setOnClickListener(this);
         getUserPermission();
         LogInfos();
     }
@@ -53,6 +52,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             startActivity(intent);
         }else if (id == R.id.btn_external_view_test){
             Intent intent = new Intent(this, ExternalViewTotalActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.btn_list_view_anim_test){
+            Intent intent = new Intent(this, WorkTest.class);
             startActivity(intent);
         }
     }

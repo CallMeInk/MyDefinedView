@@ -1,8 +1,10 @@
 package com.example.yukai.mydefinedview.BasicView.AnimTest;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -26,6 +28,7 @@ public class AnimTestActivity extends Activity implements View.OnClickListener{
     private Button mTransBtn;
     private TextView mTextView;
     private ListView mAnimationListView;
+    private ObjectAnimator animator;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +45,8 @@ public class AnimTestActivity extends Activity implements View.OnClickListener{
         mScaleBtn.setOnClickListener(this);
         mRotateBtn.setOnClickListener(this);
         mTransBtn.setOnClickListener(this);
+        (findViewById(R.id.btn_pause)).setOnClickListener(this);
+        (findViewById(R.id.btn_resume)).setOnClickListener(this);
     }
 
     @Override
@@ -64,8 +69,33 @@ public class AnimTestActivity extends Activity implements View.OnClickListener{
             animation.setFillBefore(false);
             mTextView.startAnimation(animation);
         }else if (id == R.id.btn_trans){
-            Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_trans_test);
-            mTextView.startAnimation(animation);
+            animator = ObjectAnimator.ofFloat(mTextView, "translationX", 0, -500);
+            animator.setDuration(10000);
+            animator.start();
+            mTextView.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Log.e("yk", "mtext getx::" + mTextView.getX());
+                }
+            },2000);
+            mTextView.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Log.e("yk", "mtext getx::" + mTextView.getX());
+                }
+            },3000);
+            mTextView.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Log.e("yk", "mtext getx::" + mTextView.getX());
+                }
+            },4000);
+//            Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_trans_test);
+//            mTextView.startAnimation(animation);
+        }else if (id == R.id.btn_pause){
+            animator.pause();
+        }else if (id == R.id.btn_resume){
+            animator.resume();
         }
     }
 
