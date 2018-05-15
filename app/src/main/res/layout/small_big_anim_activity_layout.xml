@@ -3,18 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingTop="100dp">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
     <Button
-        android:id="@+id/btn_list_view_anim"
+        android:id="@+id/btn_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="list view anim"/>
+        android:text="start"/>
 
-    <Button
-        android:id="@+id/btn_small_big_pic_anim"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="small big pic anim"/>
 
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.yukai.mydefinedview;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -56,5 +57,11 @@ public class MyApplication extends Application{
 
             }
         });
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        Log.e("yk", "MyApplication :: attachBaseContext");
+        super.attachBaseContext(base);
     }
 }

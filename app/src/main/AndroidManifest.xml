@@ -81,6 +81,7 @@
         <activity android:name=".BasicView.ImageSpanTest.ImageSpanActivity"/>
         <activity android:name=".WorkTest.ListViewAnim.ListViewAnimActivity"/>
         <activity android:name=".WorkTest.WorkTest"/>
+        <activity android:name=".WorkTest.SmallBigAnim.SmallBigAnimActivity"/>
     </application>
 
 </manifest>
