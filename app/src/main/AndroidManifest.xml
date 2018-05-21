@@ -30,6 +30,8 @@
             </intent-filter>
         </receiver>
 
+        <service android:name=".ExampleTest.ServiceTest.MyService"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -82,6 +84,9 @@
         <activity android:name=".WorkTest.ListViewAnim.ListViewAnimActivity"/>
         <activity android:name=".WorkTest.WorkTest"/>
         <activity android:name=".WorkTest.SmallBigAnim.SmallBigAnimActivity"/>
+        <activity android:name=".ExampleTest.ExampleTestActivity"/>
+        <activity android:name=".ExampleTest.HandlerTest.HandlerTestActivity"/>
+        <activity android:name=".ExampleTest.ServiceTest.ServiceTestActivity"/>
     </application>
 
 </manifest>

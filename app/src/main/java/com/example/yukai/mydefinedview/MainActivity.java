@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.example.yukai.mydefinedview.ArtLearningNote.ArtTotal;
 import com.example.yukai.mydefinedview.BasicView.BasicViewActivity;
+import com.example.yukai.mydefinedview.ExampleTest.ExampleTestActivity;
 import com.example.yukai.mydefinedview.ExternalView.ExternalViewTotalActivity;
 import com.example.yukai.mydefinedview.MyView.MyDefinedViewActivity;
 import com.example.yukai.mydefinedview.Utils.BitMapDisplayActivity;
@@ -31,6 +32,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         (findViewById(R.id.btn_bitmap_cut)).setOnClickListener(this);
         (findViewById(R.id.btn_external_view_test)).setOnClickListener(this);
         findViewById(R.id.btn_list_view_anim_test).setOnClickListener(this);
+        findViewById(R.id.btn_example_test).setOnClickListener(this);
         getUserPermission();
         LogInfos();
     }
@@ -56,11 +58,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }else if (id == R.id.btn_list_view_anim_test){
             Intent intent = new Intent(this, WorkTest.class);
             startActivity(intent);
+        }else if (id == R.id.btn_example_test){
+            Intent intent = new Intent(this, ExampleTestActivity.class);
+            startActivity(intent);
         }
     }
 
     private void getUserPermission(){
-
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.ACCESS_FINE_LOCATION,
@@ -69,45 +73,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         Manifest.permission.ACCESS_WIFI_STATE,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 1);
-
-
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-//            Log.e("yk", "ACCESS_COARSE_LOCATION right denied");
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-//        }
-//
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-//            Log.e("yk", "ACCESS_FINE_LOCATION right denied");
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 2);
-//        }
-//
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED){
-//            Log.e("yk", "INTERNET right denied");
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, 3);
-//        }
-//
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_NETWORK_STATE) != PackageManager.PERMISSION_GRANTED){
-//            Log.e("yk", "ACCESS_NETWORK_STATE right denied");
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_NETWORK_STATE}, 4);
-//        }
-//
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_WIFI_STATE) != PackageManager.PERMISSION_GRANTED){
-//            Log.e("yk", "ACCESS_WIFI_STATE right denied");
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_WIFI_STATE}, 5);
-//        }
-//
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-//            Log.e("yk", "WRITE_EXTERNAL_STORAGE right denied");
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-//        }else{
-//            Log.e("yk", "WRITE_EXTERNAL_STORAGE right permitted");
-//        }
-
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SYSTEM_ALERT_WINDOW) != PackageManager.PERMISSION_GRANTED){
-//            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + MainActivity.this.getPackageName()));
-//            startActivity(intent);
-//        }
-
     }
 
     private void LogInfos(){
