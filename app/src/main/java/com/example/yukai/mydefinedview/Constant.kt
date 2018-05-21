@@ -5,3 +5,4 @@ package com.example.yukai.mydefinedview
  */
 val picUrl = ""
 val branch = "master"
+val change = "I change something"
