@@ -87,6 +87,7 @@
         <activity android:name=".ExampleTest.ExampleTestActivity"/>
         <activity android:name=".ExampleTest.HandlerTest.HandlerTestActivity"/>
         <activity android:name=".ExampleTest.ServiceTest.ServiceTestActivity"/>
+        <activity android:name=".ExampleTest.HttpTest.HttpTestActivity"/>
     </application>
 
 </manifest>

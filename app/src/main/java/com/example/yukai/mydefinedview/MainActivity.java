@@ -21,7 +21,6 @@ import com.example.yukai.mydefinedview.WorkTest.WorkTest;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

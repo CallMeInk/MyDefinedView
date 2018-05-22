@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.example.yukai.mydefinedview.ExampleTest.HandlerTest.HandlerTestActivity
+import com.example.yukai.mydefinedview.ExampleTest.HttpTest.HttpTestActivity
 import com.example.yukai.mydefinedview.ExampleTest.ServiceTest.ServiceTestActivity
 import com.example.yukai.mydefinedview.R
 
@@ -18,6 +19,7 @@ class ExampleTestActivity : Activity(), View.OnClickListener{
         setContentView(R.layout.example_test_activity)
         findViewById(R.id.handler_test_btn).setOnClickListener(this)
         findViewById(R.id.service_test_btn).setOnClickListener(this)
+        findViewById(R.id.http_test_btn).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -29,6 +31,10 @@ class ExampleTestActivity : Activity(), View.OnClickListener{
             }
             R.id.service_test_btn -> {
                 val intent = Intent(this, ServiceTestActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.http_test_btn -> {
+                val intent = Intent(this, HttpTestActivity::class.java)
                 startActivity(intent)
             }
         }
