@@ -35,6 +35,8 @@ dependencies {
     compile 'com.zcw:togglebutton-library:1.0.0'
     compile 'com.jakewharton:disklrucache:2.0.2'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
+
+    implementation project(':splitmodule')
 }
 repositories {
     mavenCentral()

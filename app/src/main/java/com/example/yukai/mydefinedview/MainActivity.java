@@ -9,6 +9,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
+import com.example.splitmodule.Utils.Utils;
 import com.example.yukai.mydefinedview.ArtLearningNote.ArtTotal;
 import com.example.yukai.mydefinedview.BasicView.BasicViewActivity;
 import com.example.yukai.mydefinedview.ExampleTest.ExampleTestActivity;
@@ -79,5 +80,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         CommonUtils.log("Runtime.getRuntime().maxMemory():: " + Runtime.getRuntime().maxMemory() / 1024);
         CommonUtils.log("Runtime.getRuntime().maxMemory():: " + Runtime.getRuntime().maxMemory() / 1024 / 1024);
         CommonUtils.log("internet permision::" + (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED));
+        Utils.Companion.logUtil();
     }
 }
