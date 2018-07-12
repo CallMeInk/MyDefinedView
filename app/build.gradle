@@ -37,6 +37,9 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.4.0'
 
     implementation project(':splitmodule')
+    compile ('com.alibaba.android:vlayout:1.2.8@aar'){
+        transitive = true
+    }
 }
 repositories {
     mavenCentral()

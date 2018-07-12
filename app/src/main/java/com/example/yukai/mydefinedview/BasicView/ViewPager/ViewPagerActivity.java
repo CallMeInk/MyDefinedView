@@ -26,9 +26,9 @@ public class ViewPagerActivity extends Activity{
         MyViewPagerAdapter adapter = new MyViewPagerAdapter(this);
         initData();
         adapter.setData(mData);
-        mViewPager.setPageMargin(80);
+        //mViewPager.setPageMargin(80);
         mViewPager.setOffscreenPageLimit(3);
-        mViewPager.setPageTransformer(false, new AlphaTransformer());
+        //mViewPager.setPageTransformer(false, new AlphaTransformer());
         mViewPager.setAdapter(adapter);
     }
 

@@ -17,4 +17,10 @@
         android:layout_height="wrap_content"
         android:text="small big pic anim"/>
 
+    <Button
+        android:id="@+id/btn_virtual_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="virtual layout"/>
+
 </LinearLayout>

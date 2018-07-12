@@ -10,4 +10,39 @@
         android:layout_height="200dp"
         android:scaleType="fitXY"/>
 
+
+    <ImageView
+        android:id="@+id/bitmap_cut_test_im"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        android:layout_margin="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/hilton"/>
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="@drawable/corner_background_test"/>-->
+
+        <!--<View-->
+            <!--android:layout_width="8dp"-->
+            <!--android:layout_height="8dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:background="@drawable/right_top_corner_background"/>-->
+
+    </RelativeLayout>
+
 </LinearLayout>

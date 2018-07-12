@@ -7,6 +7,7 @@ import android.view.View
 import com.example.yukai.mydefinedview.R
 import com.example.yukai.mydefinedview.WorkTest.ListViewAnim.ListViewAnimActivity
 import com.example.yukai.mydefinedview.WorkTest.SmallBigAnim.SmallBigAnimActivity
+import com.example.yukai.mydefinedview.WorkTest.VirtualLayoutTest.VirtualLayoutActivity
 
 /**
  * Created by yukai on 2018/5/4.
@@ -18,6 +19,7 @@ class WorkTest : Activity(), View.OnClickListener{
         setContentView(R.layout.work_test_activity)
         findViewById(R.id.btn_list_view_anim).setOnClickListener(this)
         findViewById(R.id.btn_small_big_pic_anim).setOnClickListener(this)
+        findViewById(R.id.btn_virtual_layout).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -27,6 +29,9 @@ class WorkTest : Activity(), View.OnClickListener{
             startActivity(intent)
         }else if (id == R.id.btn_small_big_pic_anim){
             val intent = Intent(this, SmallBigAnimActivity::class.java)
+            startActivity(intent)
+        }else if (id == R.id.btn_virtual_layout){
+            val intent = Intent(this, VirtualLayoutActivity::class.java)
             startActivity(intent)
         }
     }

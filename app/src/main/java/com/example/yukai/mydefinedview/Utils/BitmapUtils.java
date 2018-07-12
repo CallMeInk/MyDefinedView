@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
@@ -145,6 +146,55 @@ public class BitmapUtils {
         options.inSampleSize = calculateInSampleSize(options, requiredWidth, requiredHeight);
         options.inJustDecodeBounds = false;
         return BitmapFactory.decodeFileDescriptor(fd, null, options);
+    }
+
+    public static Bitmap getCenterCropBitmap(Bitmap bitmap, int width, int height){
+        if (bitmap == null){
+            return null;
+        }
+        int bitmapWidth = bitmap.getWidth();
+        int bitmapHeight = bitmap.getHeight();
+        int x = 0;
+        int y = 0;
+        int cutWidth = 0;
+        int cutHeight = 0;
+        if (bitmapWidth * 1.0 / bitmapHeight > width * 1.0 / height){
+            x = bitmapWidth / 2 - width / 2;
+            y = 0;
+            cutWidth = width;
+            cutHeight = bitmapHeight;
+        }else{
+            x = 0;
+            y = bitmapHeight / 2 - height / 2;
+            cutWidth = bitmapWidth;
+            cutHeight = height;
+        }
+        return Bitmap.createBitmap(bitmap, x, y, cutWidth, cutHeight);
+    }
+
+    public static Bitmap getCornerBitmap(Bitmap bitmap, int outWidth, int outHeight, int radius, boolean needRightCorner) {
+        if (bitmap == null) {
+            return null;
+        }
+
+        float widthScale = outWidth * 1.0f / bitmap.getWidth();
+        float heightScale = outHeight * 1.0f / bitmap.getHeight();
+        Matrix matrix = new Matrix();
+        matrix.setScale(widthScale, heightScale);
+        BitmapShader bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+        bitmapShader.setLocalMatrix(matrix);
+        Bitmap targetBitmap = Bitmap.createBitmap(outWidth, outHeight, Bitmap.Config.ARGB_8888);
+        Canvas targetCanvas = new Canvas(targetBitmap);
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setShader(bitmapShader);
+        targetCanvas.drawRoundRect(new RectF(0, 0, outWidth, outHeight), radius, radius, paint);
+
+        if (!needRightCorner) {
+            targetCanvas.drawRect(new RectF(outWidth - radius, 0, outWidth, outHeight), paint);
+        }
+
+        return targetBitmap;
     }
 
 

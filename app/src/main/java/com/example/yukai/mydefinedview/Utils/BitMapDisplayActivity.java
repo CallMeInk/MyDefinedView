@@ -28,5 +28,11 @@ public class BitMapDisplayActivity extends Activity{
         //imageView.setImageBitmap(BitmapUtils.getRoundBitmap(bitmap));
         imageView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         imageView.setImageBitmap(BitmapUtils.addBitmapShadow(BitmapUtils.getRoundBitmap(BitmapUtils.cutBitMap(bitmap))));
+
+        ImageView imageView1 = (ImageView) findViewById(R.id.bitmap_cut_test_im);
+        Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.hilton);
+        Bitmap bitmap2 = BitmapUtils.getCenterCropBitmap(bitmap1, DeviceUtils.getPixelFromDp(100), DeviceUtils.getPixelFromDp(50));
+        Bitmap bitmap3 = BitmapUtils.getCornerBitmap(bitmap2, DeviceUtils.getPixelFromDp(100), DeviceUtils.getPixelFromDp(50), DeviceUtils.getPixelFromDp(4), true);
+        imageView1.setImageBitmap(bitmap3);
     }
 }
