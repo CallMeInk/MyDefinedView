@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.example.yukai.mydefinedview.R
+import com.example.yukai.mydefinedview.WorkTest.CircleImageViewTest.CircleImageViewActivity
 import com.example.yukai.mydefinedview.WorkTest.ListViewAnim.ListViewAnimActivity
+import com.example.yukai.mydefinedview.WorkTest.SlideToShowRoomAnim.SlideToShowRoomAnimActivity
 import com.example.yukai.mydefinedview.WorkTest.SmallBigAnim.SmallBigAnimActivity
 import com.example.yukai.mydefinedview.WorkTest.VirtualLayoutTest.VirtualLayoutActivity
 
@@ -20,6 +22,8 @@ class WorkTest : Activity(), View.OnClickListener{
         findViewById(R.id.btn_list_view_anim).setOnClickListener(this)
         findViewById(R.id.btn_small_big_pic_anim).setOnClickListener(this)
         findViewById(R.id.btn_virtual_layout).setOnClickListener(this)
+        findViewById(R.id.btn_circle_image_test).setOnClickListener(this)
+        findViewById(R.id.btn_room_anim).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -32,6 +36,12 @@ class WorkTest : Activity(), View.OnClickListener{
             startActivity(intent)
         }else if (id == R.id.btn_virtual_layout){
             val intent = Intent(this, VirtualLayoutActivity::class.java)
+            startActivity(intent)
+        }else if (id == R.id.btn_circle_image_test){
+            val intent = Intent(this, CircleImageViewActivity::class.java)
+            startActivity(intent)
+        }else if (id == R.id.btn_room_anim){
+            val intent = Intent(this, SlideToShowRoomAnimActivity::class.java)
             startActivity(intent)
         }
     }

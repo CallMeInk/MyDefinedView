@@ -88,7 +88,9 @@
         <activity android:name=".ExampleTest.HandlerTest.HandlerTestActivity"/>
         <activity android:name=".ExampleTest.ServiceTest.ServiceTestActivity"/>
         <activity android:name=".ExampleTest.HttpTest.HttpTestActivity"/>
+        <activity android:name=".WorkTest.CircleImageViewTest.CircleImageViewActivity"/>
         <activity android:name=".WorkTest.VirtualLayoutTest.VirtualLayoutActivity"/>
+        <activity android:name=".WorkTest.SlideToShowRoomAnim.SlideToShowRoomAnimActivity"/>
     </application>
 
 </manifest>

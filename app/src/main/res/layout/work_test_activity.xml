@@ -23,4 +23,16 @@
         android:layout_height="wrap_content"
         android:text="virtual layout"/>
 
+    <Button
+        android:id="@+id/btn_circle_image_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="circle image test"/>
+
+    <Button
+        android:id="@+id/btn_room_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="room anim"/>
+
 </LinearLayout>
