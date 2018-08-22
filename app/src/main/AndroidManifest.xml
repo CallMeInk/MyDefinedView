@@ -91,6 +91,7 @@
         <activity android:name=".WorkTest.CircleImageViewTest.CircleImageViewActivity"/>
         <activity android:name=".WorkTest.VirtualLayoutTest.VirtualLayoutActivity"/>
         <activity android:name=".WorkTest.SlideToShowRoomAnim.SlideToShowRoomAnimActivity"/>
+        <activity android:name=".WorkTest.CornerImageViewTest.CornerImageViewActivity"/>
     </application>
 
 </manifest>

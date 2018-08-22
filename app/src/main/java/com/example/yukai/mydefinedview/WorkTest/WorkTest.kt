@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.yukai.mydefinedview.R
 import com.example.yukai.mydefinedview.WorkTest.CircleImageViewTest.CircleImageViewActivity
+import com.example.yukai.mydefinedview.WorkTest.CornerImageViewTest.CornerImageViewActivity
 import com.example.yukai.mydefinedview.WorkTest.ListViewAnim.ListViewAnimActivity
 import com.example.yukai.mydefinedview.WorkTest.SlideToShowRoomAnim.SlideToShowRoomAnimActivity
 import com.example.yukai.mydefinedview.WorkTest.SmallBigAnim.SmallBigAnimActivity
@@ -24,6 +25,7 @@ class WorkTest : Activity(), View.OnClickListener{
         findViewById(R.id.btn_virtual_layout).setOnClickListener(this)
         findViewById(R.id.btn_circle_image_test).setOnClickListener(this)
         findViewById(R.id.btn_room_anim).setOnClickListener(this)
+        findViewById(R.id.btn_corner_image).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -42,6 +44,9 @@ class WorkTest : Activity(), View.OnClickListener{
             startActivity(intent)
         }else if (id == R.id.btn_room_anim){
             val intent = Intent(this, SlideToShowRoomAnimActivity::class.java)
+            startActivity(intent)
+        }else if (id == R.id.btn_corner_image){
+            val intent = Intent(this, CornerImageViewActivity::class.java)
             startActivity(intent)
         }
     }
