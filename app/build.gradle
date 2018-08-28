@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.google.protobuf'
 
 android {
     compileSdkVersion 25
@@ -16,6 +17,21 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+
+            java{
+                srcDir 'src/main/java'
+            }
+
+            // 定义proto文件目录
+            proto {
+                srcDir 'src/main/proto'
+                include '**/*.proto'
+            }
         }
     }
 }
@@ -41,7 +57,34 @@ dependencies {
         transitive = true
     }
     compile 'de.hdodenhof:circleimageview:2.1.0'
+    // 定义protobuf依赖，使用精简版
+    compile "com.google.protobuf:protobuf-lite:3.0.0"
+    compile ('com.squareup.retrofit2:converter-protobuf:2.2.0') {
+        exclude group: 'com.google.protobuf', module: 'protobuf-java'
+    }
 }
+
 repositories {
-    mavenCentral()
+//    mavenCentral()
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
 }
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.0.0'
+    }
+    plugins {
+        javalite {
+            artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
+        }
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                javalite {}
+            }
+        }
+    }
+}
+
+
