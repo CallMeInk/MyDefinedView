@@ -15,6 +15,7 @@ import com.example.yukai.mydefinedview.BasicView.PopUpWindow.PopUpWindowActivity
 import com.example.yukai.mydefinedview.BasicView.ProgressBar.ProgressBarActivity;
 import com.example.yukai.mydefinedview.BasicView.RatingBar.RatingBarActivity;
 import com.example.yukai.mydefinedview.BasicView.RecyclerView.RecyclerViewActivity;
+import com.example.yukai.mydefinedview.BasicView.TableLayout.TableLayoutActivity;
 import com.example.yukai.mydefinedview.BasicView.TextViewTest.TextViewActivity;
 import com.example.yukai.mydefinedview.BasicView.ToggleButtonTest.ToggleButtonActivity;
 import com.example.yukai.mydefinedview.BasicView.ViewGroupMeasureTest.ViewGroupMeasureTestActivity;
@@ -40,6 +41,7 @@ public class BasicViewActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.btn_progress_bar_test).setOnClickListener(this);
         findViewById(R.id.btn_fragment_test).setOnClickListener(this);
         findViewById(R.id.btn_image_span_test).setOnClickListener(this);
+        findViewById(R.id.btn_table_layout_test).setOnClickListener(this);
     }
 
     @Override
@@ -83,6 +85,9 @@ public class BasicViewActivity extends Activity implements View.OnClickListener{
             startActivity(intent);
         }else if (id == R.id.btn_image_span_test){
             Intent intent = new Intent(this, ImageSpanActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.btn_table_layout_test){
+            Intent intent = new Intent(this, TableLayoutActivity.class);
             startActivity(intent);
         }
     }

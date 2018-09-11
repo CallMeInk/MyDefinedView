@@ -86,5 +86,11 @@
             android:layout_height="wrap_content"
             android:text="btn_image_span_test"/>
 
+        <Button
+            android:id="@+id/btn_table_layout_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="btn table layout test"/>
+
     </LinearLayout>
 </ScrollView>
