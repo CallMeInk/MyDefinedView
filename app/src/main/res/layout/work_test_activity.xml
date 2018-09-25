@@ -47,4 +47,10 @@
         android:layout_height="wrap_content"
         android:text="btn view flipper"/>
 
+    <Button
+        android:id="@+id/btn_touch_event_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn touch event test"/>
+
 </LinearLayout>

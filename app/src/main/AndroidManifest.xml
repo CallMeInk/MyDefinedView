@@ -95,6 +95,7 @@
         <activity android:name=".ExampleTest.AsyncTaskTest.AsyncTaskTestActivity"/>
         <activity android:name=".BasicView.TableLayout.TableLayoutActivity"/>
         <activity android:name=".WorkTest.ViewFlipper.ViewFlipperActivity"/>
+        <activity android:name=".WorkTest.TouchEventTest.TouchEventTestActivity"/>s
     </application>
 
 </manifest>

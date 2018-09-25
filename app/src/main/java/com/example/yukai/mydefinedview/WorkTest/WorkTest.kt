@@ -10,6 +10,7 @@ import com.example.yukai.mydefinedview.WorkTest.CornerImageViewTest.CornerImageV
 import com.example.yukai.mydefinedview.WorkTest.ListViewAnim.ListViewAnimActivity
 import com.example.yukai.mydefinedview.WorkTest.SlideToShowRoomAnim.SlideToShowRoomAnimActivity
 import com.example.yukai.mydefinedview.WorkTest.SmallBigAnim.SmallBigAnimActivity
+import com.example.yukai.mydefinedview.WorkTest.TouchEventTest.TouchEventTestActivity
 import com.example.yukai.mydefinedview.WorkTest.ViewFlipper.ViewFlipperActivity
 import com.example.yukai.mydefinedview.WorkTest.VirtualLayoutTest.VirtualLayoutActivity
 
@@ -28,6 +29,7 @@ class WorkTest : Activity(), View.OnClickListener{
         findViewById(R.id.btn_room_anim).setOnClickListener(this)
         findViewById(R.id.btn_corner_image).setOnClickListener(this)
         findViewById(R.id.btn_view_flipper).setOnClickListener(this)
+        findViewById(R.id.btn_touch_event_test).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -52,6 +54,9 @@ class WorkTest : Activity(), View.OnClickListener{
             startActivity(intent)
         }else if (id == R.id.btn_view_flipper){
             val intent = Intent(this, ViewFlipperActivity::class.java)
+            startActivity(intent)
+        }else if (id == R.id.btn_touch_event_test){
+            val intent = Intent(this, TouchEventTestActivity::class.java)
             startActivity(intent)
         }
     }
