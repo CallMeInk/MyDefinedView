@@ -41,4 +41,10 @@
         android:layout_height="wrap_content"
         android:text="corner image"/>
 
+    <Button
+        android:id="@+id/btn_view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn view flipper"/>
+
 </LinearLayout>

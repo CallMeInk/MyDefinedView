@@ -94,6 +94,7 @@
         <activity android:name=".WorkTest.CornerImageViewTest.CornerImageViewActivity"/>
         <activity android:name=".ExampleTest.AsyncTaskTest.AsyncTaskTestActivity"/>
         <activity android:name=".BasicView.TableLayout.TableLayoutActivity"/>
+        <activity android:name=".WorkTest.ViewFlipper.ViewFlipperActivity"/>
     </application>
 
 </manifest>
