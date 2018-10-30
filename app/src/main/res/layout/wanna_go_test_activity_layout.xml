@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:id="@+id/wanna_go_root"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingBottom="13dp">
+
+        <TextView
+            android:layout_marginTop="26dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="伦敦"
+            android:textColor="#333333"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="11月02日-11月03日"
+            android:textSize="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="查看200家酒店"
+            android:textSize="11dp"
+            android:textColor="#333333"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="早班机 伦敦城机场"
+        android:textColor="#ffffff"
+        android:paddingTop="1dp"
+        android:paddingBottom="2dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="12dp"/>
+
+</RelativeLayout>

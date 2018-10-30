@@ -14,6 +14,7 @@ import com.example.yukai.mydefinedview.WorkTest.SmallBigAnim.SmallBigAnimActivit
 import com.example.yukai.mydefinedview.WorkTest.TouchEventTest.TouchEventTestActivity
 import com.example.yukai.mydefinedview.WorkTest.ViewFlipper.ViewFlipperActivity
 import com.example.yukai.mydefinedview.WorkTest.VirtualLayoutTest.VirtualLayoutActivity
+import com.example.yukai.mydefinedview.WorkTest.WannaGoViewTest.WannaGoViewTestActivity
 
 /**
  * Created by yukai on 2018/5/4.
@@ -32,6 +33,7 @@ class WorkTest : Activity(), View.OnClickListener{
         findViewById(R.id.btn_view_flipper).setOnClickListener(this)
         findViewById(R.id.btn_touch_event_test).setOnClickListener(this)
         findViewById(R.id.btn_full_room_UI_test).setOnClickListener(this)
+        findViewById(R.id.btn_wanna_go_test).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -62,6 +64,9 @@ class WorkTest : Activity(), View.OnClickListener{
             startActivity(intent)
         }else if (id == R.id.btn_full_room_UI_test){
             val intent = Intent(this, FullRoomUITestActivity::class.java)
+            startActivity(intent)
+        }else if (id == R.id.btn_wanna_go_test){
+            val intent = Intent(this, WannaGoViewTestActivity::class.java)
             startActivity(intent)
         }
     }

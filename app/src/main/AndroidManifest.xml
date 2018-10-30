@@ -97,6 +97,7 @@
         <activity android:name=".WorkTest.ViewFlipper.ViewFlipperActivity"/>
         <activity android:name=".WorkTest.TouchEventTest.TouchEventTestActivity"/>
         <activity android:name=".WorkTest.FullRoomUITest.FullRoomUITestActivity"/>
+        <activity android:name=".WorkTest.WannaGoViewTest.WannaGoViewTestActivity"/>
     </application>
 
 </manifest>

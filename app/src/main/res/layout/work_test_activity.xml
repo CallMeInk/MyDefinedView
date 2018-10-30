@@ -59,4 +59,10 @@
         android:layout_height="wrap_content"
         android:text="btn full room UI test"/>
 
+    <Button
+        android:id="@+id/btn_wanna_go_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn wanna go test"/>
+
 </LinearLayout>
