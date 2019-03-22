@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.widget.Toast;
 
 import com.example.yukai.mydefinedview.R;
 
@@ -39,4 +40,9 @@ public class ViewPagerActivity extends Activity{
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "test", Toast.LENGTH_LONG).show();
+    }
 }

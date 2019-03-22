@@ -6,6 +6,12 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/btn_work_ui_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="work ui test"/>
+
+    <Button
         android:id="@+id/btn_list_view_anim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,5 +70,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="btn wanna go test"/>
+
+    <Button
+        android:id="@+id/btn_list_view_popup_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_list_view_popup_window"/>
 
 </LinearLayout>

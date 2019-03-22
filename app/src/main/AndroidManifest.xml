@@ -98,6 +98,8 @@
         <activity android:name=".WorkTest.TouchEventTest.TouchEventTestActivity"/>
         <activity android:name=".WorkTest.FullRoomUITest.FullRoomUITestActivity"/>
         <activity android:name=".WorkTest.WannaGoViewTest.WannaGoViewTestActivity"/>
+        <activity android:name=".WorkTest.WorkUITest.WorkUITestActivity"/>
+        <activity android:name=".WorkTest.ListViewPopupWindowTest.ListViewPopupWindowTest"/>
     </application>
 
 </manifest>
