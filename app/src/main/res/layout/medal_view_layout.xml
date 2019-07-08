@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/medal_view_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="medal view text view"
+        android:layout_toLeftOf="@+id/medal_view_icon"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+    <ImageView
+        android:id="@+id/medal_view_icon"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/bubble"/>
+
+</RelativeLayout>

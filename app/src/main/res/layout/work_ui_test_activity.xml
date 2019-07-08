@@ -36,4 +36,47 @@
         android:layout_height="wrap_content"
         android:text="start button"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#ff0000"/>
+
+    <View
+        android:id="@+id/gradient_test"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@drawable/gradient_test_drawable"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#00ff00"/>
+
+    <LinearLayout
+        android:id="@+id/scale_animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#ff0000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="asdfasfasfdasdf"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bubble"/>
+
+    </LinearLayout>
+
+
 </LinearLayout>

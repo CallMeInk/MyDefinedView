@@ -4,6 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <Button
+        android:id="@+id/btn_medal_type_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_medal_type_test"/>
 
     <Button
         android:id="@+id/btn_work_ui_test"
@@ -76,5 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="btn_list_view_popup_window"/>
+
+
 
 </LinearLayout>

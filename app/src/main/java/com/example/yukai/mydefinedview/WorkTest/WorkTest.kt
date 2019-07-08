@@ -10,6 +10,7 @@ import com.example.yukai.mydefinedview.WorkTest.CornerImageViewTest.CornerImageV
 import com.example.yukai.mydefinedview.WorkTest.FullRoomUITest.FullRoomUITestActivity
 import com.example.yukai.mydefinedview.WorkTest.ListViewAnim.ListViewAnimActivity
 import com.example.yukai.mydefinedview.WorkTest.ListViewPopupWindowTest.ListViewPopupWindowTest
+import com.example.yukai.mydefinedview.WorkTest.MedalTypeDemoTest.MedalTypeDemoActivity
 import com.example.yukai.mydefinedview.WorkTest.SlideToShowRoomAnim.SlideToShowRoomAnimActivity
 import com.example.yukai.mydefinedview.WorkTest.SmallBigAnim.SmallBigAnimActivity
 import com.example.yukai.mydefinedview.WorkTest.TouchEventTest.TouchEventTestActivity
@@ -38,6 +39,7 @@ class WorkTest : Activity(), View.OnClickListener{
         findViewById(R.id.btn_full_room_UI_test).setOnClickListener(this)
         findViewById(R.id.btn_wanna_go_test).setOnClickListener(this)
         findViewById(R.id.btn_list_view_popup_window).setOnClickListener(this)
+        findViewById(R.id.btn_medal_type_test).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -77,6 +79,9 @@ class WorkTest : Activity(), View.OnClickListener{
             startActivity(intent)
         }else if (id == R.id.btn_list_view_popup_window){
             val intent = Intent(this, ListViewPopupWindowTest::class.java)
+            startActivity(intent)
+        }else if (id == R.id.btn_medal_type_test){
+            val intent = Intent(this, MedalTypeDemoActivity::class.java)
             startActivity(intent)
         }
     }

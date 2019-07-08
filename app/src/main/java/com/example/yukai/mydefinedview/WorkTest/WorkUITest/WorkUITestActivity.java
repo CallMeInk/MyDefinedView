@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -22,6 +23,8 @@ public class WorkUITestActivity extends Activity implements View.OnClickListener
     private ValueAnimator mBubbleAnimator;
     private final float BUBBLE_WIDTH = DeviceUtils.getPixelFromDp(28);
     private final float BUBBLE_HEIGHT = DeviceUtils.getPixelFromDp(30);
+    private View mScaleAnimationView;
+    private ScaleAnimation mAnimation;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -81,11 +84,16 @@ public class WorkUITestActivity extends Activity implements View.OnClickListener
                 mBubbleIv.setLayoutParams(layoutParams);
             }
         });
+
+        mScaleAnimationView = findViewById(R.id.scale_animation_view);
+        mAnimation = new ScaleAnimation(1, 2, 1, 2, DeviceUtils.getScreenWidth() / 2, 0);
+        mAnimation.setDuration(1000);
     }
 
     @Override
     public void onClick(View v) {
         mTabIv.setVisibility(View.VISIBLE);
         mTabAnimator.start();
+        mScaleAnimationView.startAnimation(mAnimation);
     }
 }
