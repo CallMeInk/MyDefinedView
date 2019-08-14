@@ -8,6 +8,7 @@ import android.widget.ProgressBar;
 
 import com.example.yukai.mydefinedview.BasicView.ActivityLifeCycleTest.Activity_A;
 import com.example.yukai.mydefinedview.BasicView.AnimTest.AnimTestActivity;
+import com.example.yukai.mydefinedview.BasicView.ConstraintLayout.ConstraintLayoutActivity;
 import com.example.yukai.mydefinedview.BasicView.FragmentAndActivityTest.FragmentActivity1;
 import com.example.yukai.mydefinedview.BasicView.Grid.GridViewActivity;
 import com.example.yukai.mydefinedview.BasicView.ImageSpanTest.ImageSpanActivity;
@@ -42,6 +43,7 @@ public class BasicViewActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.btn_fragment_test).setOnClickListener(this);
         findViewById(R.id.btn_image_span_test).setOnClickListener(this);
         findViewById(R.id.btn_table_layout_test).setOnClickListener(this);
+        findViewById(R.id.btn_constraint_layout_test).setOnClickListener(this);
     }
 
     @Override
@@ -88,6 +90,9 @@ public class BasicViewActivity extends Activity implements View.OnClickListener{
             startActivity(intent);
         }else if (id == R.id.btn_table_layout_test){
             Intent intent = new Intent(this, TableLayoutActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.btn_constraint_layout_test){
+            Intent intent = new Intent(this, ConstraintLayoutActivity.class);
             startActivity(intent);
         }
     }
