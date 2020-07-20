@@ -46,4 +46,10 @@
         android:layout_height="wrap_content"
         android:text="work test"/>
 
+    <Button
+        android:id="@+id/btn_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="review"/>
+
 </LinearLayout>

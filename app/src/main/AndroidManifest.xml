@@ -102,6 +102,8 @@
         <activity android:name=".WorkTest.ListViewPopupWindowTest.ListViewPopupWindowTest"/>
         <activity android:name=".WorkTest.MedalTypeDemoTest.MedalTypeDemoActivity"/>
         <activity android:name=".BasicView.ConstraintLayout.ConstraintLayoutActivity"/>
+        <activity android:name=".review.ReviewSimpleActivity"/>
+        <activity android:name=".review.ReviewSimpleActivityB"/>
     </application>
 
 </manifest>

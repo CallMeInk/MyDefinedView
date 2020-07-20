@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyDefinedView.iml" filepath="$PROJECT_DIR$/MyDefinedView.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/splitModule/splitmodule.iml" filepath="$PROJECT_DIR$/splitModule/splitmodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyDefinedView.iml" filepath="$PROJECT_DIR$/MyDefinedView.iml" group="MyDefinedView" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="MyDefinedView/app" />
+      <module fileurl="file://$PROJECT_DIR$/splitModule/splitmodule.iml" filepath="$PROJECT_DIR$/splitModule/splitmodule.iml" group="MyDefinedView/splitmodule" />
     </modules>
   </component>
 </project>
