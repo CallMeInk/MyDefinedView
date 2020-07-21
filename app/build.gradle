@@ -23,7 +23,7 @@ android {
     sourceSets {
         main {
 
-            java{
+            java {
                 srcDir 'src/main/java'
             }
 
@@ -34,6 +34,10 @@ android {
             }
         }
     }
+
+    dataBinding{
+        enabled = true
+    }
 }
 
 dependencies {
@@ -42,31 +46,31 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:recyclerview-v7:25.3.1'
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
-    compile 'com.zcw:togglebutton-library:1.0.0'
-    compile 'com.jakewharton:disklrucache:2.0.2'
-    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    implementation 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
+    implementation 'com.zcw:togglebutton-library:1.0.0'
+    implementation 'com.jakewharton:disklrucache:2.0.2'
+    implementation 'com.squareup.okhttp:okhttp:2.4.0'
 
     implementation project(':splitmodule')
-    compile ('com.alibaba.android:vlayout:1.2.8@aar'){
+    compile('com.alibaba.android:vlayout:1.2.8@aar') {
         transitive = true
     }
-    compile 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
     // 定义protobuf依赖，使用精简版
-    compile "com.google.protobuf:protobuf-lite:3.0.0"
-    compile ('com.squareup.retrofit2:converter-protobuf:2.2.0') {
+    implementation "com.google.protobuf:protobuf-lite:3.0.0"
+    compile('com.squareup.retrofit2:converter-protobuf:2.2.0') {
         exclude group: 'com.google.protobuf', module: 'protobuf-java'
     }
 }
 
 repositories {
 //    mavenCentral()
-    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 }
 
 protobuf {
@@ -86,5 +90,3 @@ protobuf {
         }
     }
 }
-
-

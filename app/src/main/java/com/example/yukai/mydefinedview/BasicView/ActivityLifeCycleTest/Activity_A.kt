@@ -3,6 +3,7 @@ package com.example.yukai.mydefinedview.BasicView.ActivityLifeCycleTest
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import com.example.yukai.mydefinedview.R
 
 /**

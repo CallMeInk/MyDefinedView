@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -18,9 +17,9 @@ import com.example.yukai.mydefinedview.ExternalView.ExternalViewTotalActivity;
 import com.example.yukai.mydefinedview.MyView.MyDefinedViewActivity;
 import com.example.yukai.mydefinedview.Utils.BitMapDisplayActivity;
 import com.example.yukai.mydefinedview.Utils.CommonUtils;
-import com.example.yukai.mydefinedview.WorkTest.ListViewAnim.ListViewAnimActivity;
 import com.example.yukai.mydefinedview.WorkTest.WorkTest;
-import com.example.yukai.mydefinedview.review.ReviewSimpleActivity;
+import com.example.yukai.mydefinedview.review.IntentService.ReviewSimpleActivity;
+import com.example.yukai.mydefinedview.review.ReviewActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -65,7 +64,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Intent intent = new Intent(this, ExampleTestActivity.class);
             startActivity(intent);
         }else if (id == R.id.btn_review){
-            Intent intent = new Intent(this, ReviewSimpleActivity.class);
+            Intent intent = new Intent(this, ReviewActivity.class);
             startActivity(intent);
         }
     }

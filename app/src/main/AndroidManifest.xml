@@ -2,36 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yukai.mydefinedview">
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-
-
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".MyApplication">
-
-        <receiver android:name=".ArtLearningNote.chapter5_1.MyAppWidgetProvider">
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/app_widget_provider_info">
-            </meta-data>
-            <intent-filter>
-                <action android:name="com.example.yukai.mydefinedview.click"/>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
-            </intent-filter>
-        </receiver>
-
-        <service android:name=".ExampleTest.ServiceTest.MyService"/>
-
+        android:theme="@style/AppTheme">
+        <activity android:name=".review.MVVM.MvvmActivity"></activity>
+        <activity android:name=".review.ReviewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,65 +25,85 @@
         <activity android:name=".BasicView.Grid.GridViewActivity" />
         <activity android:name=".BasicView.PopUpWindow.PopUpWindowActivity" />
         <activity android:name=".BasicView.AnimTest.AnimTestActivity" />
-        <activity android:name=".ArtLearningNote.ArtTotal"/>
-        <activity android:name=".ArtLearningNote.chapter3_1.Chapter3_1"/>
-        <activity android:name=".ArtLearningNote.chapter3_2.Chapter3_2"/>
-        <activity android:name=".ArtLearningNote.chapter3_3.Chapter3_3"/>
-        <activity android:name=".ArtLearningNote.chapter3_4.Chapter3_4"/>
-        <activity android:name=".MyView.MyTextView.MyTextViewActivity"/>
-        <activity android:name=".MyView.MyTopBarView.MyTopBarViewActivity"/>
-        <activity android:name=".MyView.MyCircleRatingView.MyCircleRatingViewActivity"/>
-        <activity android:name=".MyView.MyMediaRectView.MyMediaRectViewActivity"/>
-        <activity android:name=".MyView.MySimpleView.MySimpleViewActivity"/>
-        <activity android:name=".MyView.MyAutoLayout.MyAutoLayoutActivity"/>
-        <activity android:name=".BasicView.RatingBar.RatingBarActivity"/>
-        <activity android:name=".BasicView.ActivityLifeCycleTest.Activity_A"/>
-        <activity android:name=".BasicView.ActivityLifeCycleTest.Activity_B"/>
-        <activity android:name=".ArtLearningNote.chapter5_1.Chapter5_1"/>
-        <activity android:name=".ArtLearningNote.chapter5_1.NotificationActivity"/>
-        <activity android:name=".Utils.BitMapDisplayActivity"/>
-        <activity android:name=".ArtLearningNote.chapter6_1.Chapter6_1"/>
-        <activity android:name=".ArtLearningNote.chapter8_1.Chapter8_1"/>
+        <activity android:name=".ArtLearningNote.ArtTotal" />
+        <activity android:name=".ArtLearningNote.chapter3_1.Chapter3_1" />
+        <activity android:name=".ArtLearningNote.chapter3_2.Chapter3_2" />
+        <activity android:name=".ArtLearningNote.chapter3_3.Chapter3_3" />
+        <activity android:name=".ArtLearningNote.chapter3_4.Chapter3_4" />
+        <activity android:name=".MyView.MyTextView.MyTextViewActivity" />
+        <activity android:name=".MyView.MyTopBarView.MyTopBarViewActivity" />
+        <activity android:name=".MyView.MyCircleRatingView.MyCircleRatingViewActivity" />
+        <activity android:name=".MyView.MyMediaRectView.MyMediaRectViewActivity" />
+        <activity android:name=".MyView.MySimpleView.MySimpleViewActivity" />
+        <activity android:name=".MyView.MyAutoLayout.MyAutoLayoutActivity" />
+        <activity android:name=".BasicView.RatingBar.RatingBarActivity" />
+        <activity android:name=".BasicView.ActivityLifeCycleTest.Activity_A" />
+        <activity android:name=".BasicView.ActivityLifeCycleTest.Activity_B" />
+        <activity android:name=".ArtLearningNote.chapter5_1.Chapter5_1" />
+        <activity android:name=".ArtLearningNote.chapter5_1.NotificationActivity" />
+        <activity android:name=".Utils.BitMapDisplayActivity" />
+        <activity android:name=".ArtLearningNote.chapter6_1.Chapter6_1" />
+        <activity android:name=".ArtLearningNote.chapter8_1.Chapter8_1" />
         <activity
             android:name=".MyView.MyDanmuView.MyDanmuActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
-        <activity android:name=".BasicView.ViewPager.ViewPagerActivity"/>
-        <activity android:name=".BasicView.ViewGroupMeasureTest.ViewGroupMeasureTestActivity"/>
-        <activity android:name=".ExternalView.ExternalViewTotalActivity"/>
-        <activity android:name=".ExternalView.BiliBiliDanmuView.BiliBiliDanmuViewActivity"/>
-        <activity android:name=".ArtLearningNote.chapter10_2.Chapter10_2"/>
-        <activity android:name=".BasicView.ToggleButtonTest.ToggleButtonActivity"/>
-        <activity android:name=".MyView.MySwitchView.SwitchTestActivity"/>
-        <activity android:name=".BasicView.TextViewTest.TextViewActivity"/>
-        <activity android:name=".ArtLearningNote.chapter12_1.ImageLoaderTextActivity"/>
-        <activity android:name=".ArtLearningNote.chapter13_1.Chapter13_1_Activity"/>
-        <activity android:name=".BasicView.ProgressBar.ProgressBarActivity"/>
-        <activity android:name=".BasicView.FragmentAndActivityTest.FragmentActivity1"/>
-        <activity android:name=".BasicView.FragmentAndActivityTest.BaseActivity"/>
-        <activity android:name=".BasicView.ImageSpanTest.ImageSpanActivity"/>
-        <activity android:name=".WorkTest.ListViewAnim.ListViewAnimActivity"/>
-        <activity android:name=".WorkTest.WorkTest"/>
-        <activity android:name=".WorkTest.SmallBigAnim.SmallBigAnimActivity"/>
-        <activity android:name=".ExampleTest.ExampleTestActivity"/>
-        <activity android:name=".ExampleTest.HandlerTest.HandlerTestActivity"/>
-        <activity android:name=".ExampleTest.ServiceTest.ServiceTestActivity"/>
-        <activity android:name=".ExampleTest.HttpTest.HttpTestActivity"/>
-        <activity android:name=".WorkTest.CircleImageViewTest.CircleImageViewActivity"/>
-        <activity android:name=".WorkTest.VirtualLayoutTest.VirtualLayoutActivity"/>
-        <activity android:name=".WorkTest.SlideToShowRoomAnim.SlideToShowRoomAnimActivity"/>
-        <activity android:name=".WorkTest.CornerImageViewTest.CornerImageViewActivity"/>
-        <activity android:name=".ExampleTest.AsyncTaskTest.AsyncTaskTestActivity"/>
-        <activity android:name=".BasicView.TableLayout.TableLayoutActivity"/>
-        <activity android:name=".WorkTest.ViewFlipper.ViewFlipperActivity"/>
-        <activity android:name=".WorkTest.TouchEventTest.TouchEventTestActivity"/>
-        <activity android:name=".WorkTest.FullRoomUITest.FullRoomUITestActivity"/>
-        <activity android:name=".WorkTest.WannaGoViewTest.WannaGoViewTestActivity"/>
-        <activity android:name=".WorkTest.WorkUITest.WorkUITestActivity"/>
-        <activity android:name=".WorkTest.ListViewPopupWindowTest.ListViewPopupWindowTest"/>
-        <activity android:name=".WorkTest.MedalTypeDemoTest.MedalTypeDemoActivity"/>
-        <activity android:name=".BasicView.ConstraintLayout.ConstraintLayoutActivity"/>
-        <activity android:name=".review.ReviewSimpleActivity"/>
-        <activity android:name=".review.ReviewSimpleActivityB"/>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".BasicView.ViewPager.ViewPagerActivity" />
+        <activity android:name=".BasicView.ViewGroupMeasureTest.ViewGroupMeasureTestActivity" />
+        <activity android:name=".ExternalView.ExternalViewTotalActivity" />
+        <activity android:name=".ExternalView.BiliBiliDanmuView.BiliBiliDanmuViewActivity" />
+        <activity android:name=".ArtLearningNote.chapter10_2.Chapter10_2" />
+        <activity android:name=".BasicView.ToggleButtonTest.ToggleButtonActivity" />
+        <activity android:name=".MyView.MySwitchView.SwitchTestActivity" />
+        <activity android:name=".BasicView.TextViewTest.TextViewActivity" />
+        <activity android:name=".ArtLearningNote.chapter12_1.ImageLoaderTextActivity" />
+        <activity android:name=".ArtLearningNote.chapter13_1.Chapter13_1_Activity" />
+        <activity android:name=".BasicView.ProgressBar.ProgressBarActivity" />
+        <activity android:name=".BasicView.FragmentAndActivityTest.FragmentActivity1" />
+        <activity android:name=".BasicView.FragmentAndActivityTest.BaseActivity" />
+        <activity android:name=".BasicView.ImageSpanTest.ImageSpanActivity" />
+        <activity android:name=".WorkTest.ListViewAnim.ListViewAnimActivity" />
+        <activity android:name=".WorkTest.WorkTest" />
+        <activity android:name=".WorkTest.SmallBigAnim.SmallBigAnimActivity" />
+        <activity android:name=".ExampleTest.ExampleTestActivity" />
+        <activity android:name=".ExampleTest.HandlerTest.HandlerTestActivity" />
+        <activity android:name=".ExampleTest.ServiceTest.ServiceTestActivity" />
+        <activity android:name=".ExampleTest.HttpTest.HttpTestActivity" />
+        <activity android:name=".WorkTest.CircleImageViewTest.CircleImageViewActivity" />
+        <activity android:name=".WorkTest.VirtualLayoutTest.VirtualLayoutActivity" />
+        <activity android:name=".WorkTest.SlideToShowRoomAnim.SlideToShowRoomAnimActivity" />
+        <activity android:name=".WorkTest.CornerImageViewTest.CornerImageViewActivity" />
+        <activity android:name=".ExampleTest.AsyncTaskTest.AsyncTaskTestActivity" />
+        <activity android:name=".BasicView.TableLayout.TableLayoutActivity" />
+        <activity android:name=".WorkTest.ViewFlipper.ViewFlipperActivity" />
+        <activity android:name=".WorkTest.TouchEventTest.TouchEventTestActivity" />
+        <activity android:name=".WorkTest.FullRoomUITest.FullRoomUITestActivity" />
+        <activity android:name=".WorkTest.WannaGoViewTest.WannaGoViewTestActivity" />
+        <activity android:name=".WorkTest.WorkUITest.WorkUITestActivity" />
+        <activity android:name=".WorkTest.ListViewPopupWindowTest.ListViewPopupWindowTest" />
+        <activity android:name=".WorkTest.MedalTypeDemoTest.MedalTypeDemoActivity" />
+        <activity android:name=".BasicView.ConstraintLayout.ConstraintLayoutActivity" />
+        <activity android:name=".review.IntentService.ReviewSimpleActivity" />
+        <activity android:name=".review.IntentService.ReviewSimpleActivityB" />
+
+        <receiver android:name=".ArtLearningNote.chapter5_1.MyAppWidgetProvider">
+            <intent-filter>
+                <action android:name="com.example.yukai.mydefinedview.click" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_provider_info" />
+        </receiver>
+
+        <service android:name=".ExampleTest.ServiceTest.MyService" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
 
 </manifest>

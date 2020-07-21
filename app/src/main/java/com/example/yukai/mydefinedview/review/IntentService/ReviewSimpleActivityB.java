@@ -1,4 +1,4 @@
-package com.example.yukai.mydefinedview.review;
+package com.example.yukai.mydefinedview.review.IntentService;
 
 import android.app.Activity;
 import android.os.Bundle;
