@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import com.example.yukai.mydefinedview.R
 import com.example.yukai.mydefinedview.Utils.ThreadPool
-import com.squareup.okhttp.OkHttpClient
-import com.squareup.okhttp.Request
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader

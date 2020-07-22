@@ -35,7 +35,7 @@ android {
         }
     }
 
-    dataBinding{
+    dataBinding {
         enabled = true
     }
 }
@@ -54,7 +54,6 @@ dependencies {
     implementation 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
     implementation 'com.zcw:togglebutton-library:1.0.0'
     implementation 'com.jakewharton:disklrucache:2.0.2'
-    implementation 'com.squareup.okhttp:okhttp:2.4.0'
 
     implementation project(':splitmodule')
     compile('com.alibaba.android:vlayout:1.2.8@aar') {
@@ -66,6 +65,20 @@ dependencies {
     compile('com.squareup.retrofit2:converter-protobuf:2.2.0') {
         exclude group: 'com.google.protobuf', module: 'protobuf-java'
     }
+
+    //rxjava
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    //Gson converter
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //RxJava2 Adapter
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    //okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
 }
 
 repositories {
