@@ -2,9 +2,8 @@ package com.example.yukai.mydefinedview.BasicView.Grid;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.GridView;
-import android.widget.SimpleAdapter;
 
 import com.example.yukai.mydefinedview.R;
 

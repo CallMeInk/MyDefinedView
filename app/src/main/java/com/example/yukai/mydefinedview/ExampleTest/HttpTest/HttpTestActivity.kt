@@ -3,6 +3,7 @@ package com.example.yukai.mydefinedview.ExampleTest.HttpTest
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import com.example.yukai.mydefinedview.R
 import com.example.yukai.mydefinedview.Utils.ThreadPool
 import okhttp3.OkHttpClient
@@ -22,21 +23,17 @@ class HttpTestActivity : Activity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.http_test_activity_layout)
-        findViewById(R.id.start_http_request).setOnClickListener { _ ->
-            ThreadPool.getInstance().execute(object : Runnable{
-                override fun run() {
-                    val result = executeHttpGet()
-                    Log.e("yk", result)
-                }
-            })
+        findViewById<Button>(R.id.start_http_request).setOnClickListener { _ ->
+            ThreadPool.getInstance().execute {
+                val result = executeHttpGet()
+                Log.e("yk", result ?: "")
+            }
         }
-        findViewById(R.id.start_okhttp_request).setOnClickListener { _ ->
-            ThreadPool.getInstance().execute(object : Runnable{
-                override fun run() {
-                    val result = startOkhttpGet()
-                    Log.e("yk", result)
-                }
-            })
+        findViewById<Button>(R.id.start_okhttp_request).setOnClickListener { _ ->
+            ThreadPool.getInstance().execute {
+                val result = startOkhttpGet()
+                Log.e("yk", result ?: "")
+            }
         }
     }
 

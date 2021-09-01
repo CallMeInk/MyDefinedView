@@ -1,17 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.google.protobuf'
-
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 30
+    buildToolsVersion '26.0.3'
     defaultConfig {
         applicationId "com.example.yukai.mydefinedview"
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionName "1.0.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
         release {
@@ -22,15 +22,8 @@ android {
 
     sourceSets {
         main {
-
             java {
                 srcDir 'src/main/java'
-            }
-
-            // 定义proto文件目录
-            proto {
-                srcDir 'src/main/proto'
-                include '**/*.proto'
             }
         }
     }
@@ -41,16 +34,16 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:design:25.4.0'
+    implementation 'com.google.android.material:material:1.2.1'
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestCompile('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'com.android.support:appcompat-v7:25.3.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.android.support:recyclerview-v7:25.3.1'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     testCompile 'junit:junit:4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
     implementation 'com.zcw:togglebutton-library:1.0.0'
     implementation 'com.jakewharton:disklrucache:2.0.2'
@@ -60,11 +53,7 @@ dependencies {
         transitive = true
     }
     implementation 'de.hdodenhof:circleimageview:2.1.0'
-    // 定义protobuf依赖，使用精简版
-    implementation "com.google.protobuf:protobuf-lite:3.0.0"
-    compile('com.squareup.retrofit2:converter-protobuf:2.2.0') {
-        exclude group: 'com.google.protobuf', module: 'protobuf-java'
-    }
+
 
     //rxjava
     implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
@@ -86,20 +75,7 @@ repositories {
     maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 }
 
-protobuf {
-    protoc {
-        artifact = 'com.google.protobuf:protoc:3.0.0'
-    }
-    plugins {
-        javalite {
-            artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
-        }
-    }
-    generateProtoTasks {
-        all().each { task ->
-            task.plugins {
-                javalite {}
-            }
-        }
-    }
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }

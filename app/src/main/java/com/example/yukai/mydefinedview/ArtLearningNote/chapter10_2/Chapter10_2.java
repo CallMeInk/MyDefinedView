@@ -3,7 +3,7 @@ package com.example.yukai.mydefinedview.ArtLearningNote.chapter10_2;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.example.yukai.mydefinedview.R;

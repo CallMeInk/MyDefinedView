@@ -2,18 +2,15 @@ package com.example.yukai.mydefinedview.MyView.MyDanmuView;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.Log;
+import androidx.annotation.Nullable;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.yukai.mydefinedview.R;
-import com.example.yukai.mydefinedview.Utils.ThreadPool;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Executors;
 
 /**
  * Created by yukai on 2018/2/22.

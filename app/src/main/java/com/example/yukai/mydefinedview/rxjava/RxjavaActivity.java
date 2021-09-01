@@ -1,13 +1,11 @@
 package com.example.yukai.mydefinedview.rxjava;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.yukai.mydefinedview.R;
+import androidx.appcompat.app.AppCompatActivity;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
+import com.example.yukai.mydefinedview.R;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
@@ -17,7 +15,6 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.BiFunction;
@@ -39,7 +36,7 @@ public class RxjavaActivity extends AppCompatActivity {
         rxjavaTest4();
     }
 
-    private void rxjavaTest1(){
+    private void rxjavaTest1() {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
@@ -58,7 +55,7 @@ public class RxjavaActivity extends AppCompatActivity {
 
             @Override
             public void onNext(Integer value) {
-                if (value == 2){
+                if (value == 2) {
                     disposable.dispose();
                 }
                 Log.e("yk", "onNext::" + value);
@@ -76,7 +73,7 @@ public class RxjavaActivity extends AppCompatActivity {
         });
     }
 
-    private void rxjavaTest2(){
+    private void rxjavaTest2() {
         Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
@@ -110,7 +107,7 @@ public class RxjavaActivity extends AppCompatActivity {
                 .subscribe(consumer);
     }
 
-    private void rxjavaTest3(){
+    private void rxjavaTest3() {
         Observable<Integer> observable1 = Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
@@ -163,35 +160,35 @@ public class RxjavaActivity extends AppCompatActivity {
         });
     }
 
-    private void rxjavaTest4(){
-        Flowable.create(new FlowableOnSubscribe<Integer>() {
-            @Override
-            public void subscribe(FlowableEmitter<Integer> e) throws Exception {
-                e.onNext(1);
-                e.onNext(2);
-                e.onNext(3);
-                e.onComplete();
-            }
-        }, BackpressureStrategy.ERROR).subscribe(new Subscriber<Integer>() {
-            @Override
-            public void onSubscribe(Subscription s) {
-                s.request(Long.MAX_VALUE);
-            }
-
-            @Override
-            public void onNext(Integer integer) {
-
-            }
-
-            @Override
-            public void onError(Throwable t) {
-                Log.e("yk", "onError");
-            }
-
-            @Override
-            public void onComplete() {
-
-            }
-        });
+    private void rxjavaTest4() {
+//        Flowable.create(new FlowableOnSubscribe<Integer>() {
+//            @Override
+//            public void subscribe(FlowableEmitter<Integer> e) throws Exception {
+//                e.onNext(1);
+//                e.onNext(2);
+//                e.onNext(3);
+//                e.onComplete();
+//            }
+//        }, BackpressureStrategy.ERROR).subscribe(new Subscriber<Integer>() {
+//            @Override
+//            public void onSubscribe(Subscription s) {
+//                s.request(Long.MAX_VALUE);
+//            }
+//
+//            @Override
+//            public void onNext(Integer integer) {
+//
+//            }
+//
+//            @Override
+//            public void onError(Throwable t) {
+//                Log.e("yk", "onError");
+//            }
+//
+//            @Override
+//            public void onComplete() {
+//
+//            }
+//        });
     }
 }

@@ -1,20 +1,16 @@
 package com.example.yukai.mydefinedview.BasicView.RecyclerView;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.example.yukai.mydefinedview.R;
-import com.example.yukai.mydefinedview.Utils.CommonUtils;
 
 import java.util.ArrayList;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 /**
  * Created by yukai on 2017/10/18.

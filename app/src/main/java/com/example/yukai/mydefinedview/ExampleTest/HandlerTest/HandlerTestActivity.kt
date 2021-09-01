@@ -32,10 +32,9 @@ class HandlerTestActivity : Activity(){
     }
 
     private inner class MyHandler: Handler(){
-        override fun handleMessage(msg: Message?) {
+        override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
-            val what = msg?.what ?: 0
-            when(what){
+            when(msg.what){
                 1 -> {
                     Log.e("yk", "handle message 1")
                     Thread.sleep(5000)

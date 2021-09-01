@@ -7,15 +7,12 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.telephony.TelephonyManager;
-import android.text.Spannable;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
 import android.text.style.ImageSpan;
 import android.widget.TextView;
 
-import com.example.yukai.mydefinedview.MyApplication;
 import com.example.yukai.mydefinedview.R;
 import com.example.yukai.mydefinedview.Utils.DeviceUtils;
 

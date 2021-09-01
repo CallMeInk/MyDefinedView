@@ -18,20 +18,20 @@ class Fragment2 : BaseFragment(){
         return "Fragment2"
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout.fragment1_layout, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val textView = view?.findViewById(R.id.fragment_text) as? TextView
         textView?.text = "this is fragment 2"
         textView?.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
-                activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, Fragment3(), "fragment3")
-                        .addToBackStack("f3")
-                        .commitAllowingStateLoss()
+                activity?.supportFragmentManager?.beginTransaction()
+                        ?.replace(R.id.container, Fragment3(), "fragment3")
+                        ?.addToBackStack("f3")
+                        ?.commitAllowingStateLoss()
             }
         })
     }

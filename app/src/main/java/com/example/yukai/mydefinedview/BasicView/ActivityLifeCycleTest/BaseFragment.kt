@@ -1,6 +1,6 @@
 package com.example.yukai.mydefinedview.BasicView.ActivityLifeCycleTest
 
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 
 
 /**

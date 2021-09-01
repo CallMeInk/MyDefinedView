@@ -2,6 +2,7 @@ package com.example.yukai.mydefinedview.BasicView.FragmentAndActivityTest
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import com.example.yukai.mydefinedview.R
 
 /**
@@ -17,7 +18,7 @@ class FragmentActivity1 : BaseActivity(){
                     .add(R.id.container, Fragment1.newInstance(""), "fragment1")
                     .commitAllowingStateLoss()
         }
-        findViewById(R.id.remove_btn).setOnClickListener(object : View.OnClickListener{
+        findViewById<Button>(R.id.remove_btn).setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
                 val fragment = supportFragmentManager.findFragmentByTag("fragment1")
                 fragment ?: return

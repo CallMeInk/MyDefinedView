@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import com.example.yukai.mydefinedview.R
 
 /**
@@ -34,10 +35,10 @@ class ServiceTestActivity : Activity(), View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.service_test_actvity)
-        findViewById(R.id.start_service).setOnClickListener(this)
-        findViewById(R.id.stop_service).setOnClickListener(this)
-        findViewById(R.id.bind_service).setOnClickListener(this)
-        findViewById(R.id.unbind_service).setOnClickListener(this)
+        findViewById<Button>(R.id.start_service).setOnClickListener(this)
+        findViewById<Button>(R.id.stop_service).setOnClickListener(this)
+        findViewById<Button>(R.id.bind_service).setOnClickListener(this)
+        findViewById<Button>(R.id.unbind_service).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {

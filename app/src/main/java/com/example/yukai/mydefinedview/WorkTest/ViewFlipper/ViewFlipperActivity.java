@@ -3,7 +3,7 @@ package com.example.yukai.mydefinedview.WorkTest.ViewFlipper;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;

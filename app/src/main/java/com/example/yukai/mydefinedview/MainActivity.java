@@ -5,8 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 
@@ -19,7 +19,6 @@ import com.example.yukai.mydefinedview.MyView.MyDefinedViewActivity;
 import com.example.yukai.mydefinedview.Utils.BitMapDisplayActivity;
 import com.example.yukai.mydefinedview.Utils.CommonUtils;
 import com.example.yukai.mydefinedview.WorkTest.WorkTest;
-import com.example.yukai.mydefinedview.review.IntentService.ReviewSimpleActivity;
 import com.example.yukai.mydefinedview.review.ReviewActivity;
 import com.example.yukai.mydefinedview.rxjava.RxjavaActivity;
 

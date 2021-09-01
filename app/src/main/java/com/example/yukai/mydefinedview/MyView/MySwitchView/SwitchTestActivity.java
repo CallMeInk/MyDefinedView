@@ -2,10 +2,9 @@ package com.example.yukai.mydefinedview.MyView.MySwitchView;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.example.yukai.mydefinedview.R;
-import com.zcw.togglebutton.ToggleButton;
 
 /**
  * Created by yukai on 2018/3/6.

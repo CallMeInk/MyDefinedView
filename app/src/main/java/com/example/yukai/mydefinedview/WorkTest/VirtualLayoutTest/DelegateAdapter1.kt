@@ -1,6 +1,6 @@
 package com.example.yukai.mydefinedview.WorkTest.VirtualLayoutTest
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,8 +20,8 @@ class DelegateAdapter1 : DelegateAdapter.Adapter<DelegateAdapter1.InnerViewHolde
         holder.textView?.text = position.toString()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): InnerViewHolder {
-        return InnerViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.v_layout_item_view, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InnerViewHolder {
+        return InnerViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.v_layout_item_view, parent, false))
     }
 
     override fun onCreateLayoutHelper(): LayoutHelper {
@@ -34,12 +34,12 @@ class DelegateAdapter1 : DelegateAdapter.Adapter<DelegateAdapter1.InnerViewHolde
         return 30
     }
 
-    inner class InnerViewHolder(val view: View?) : RecyclerView.ViewHolder(view){
+    inner class InnerViewHolder(val view: View) : RecyclerView.ViewHolder(view){
 
         var textView: TextView? = null
 
         init {
-            textView = view?.findViewById(R.id.v_item_tv) as TextView?
+            textView = view.findViewById(R.id.v_item_tv) as TextView?
         }
     }
 }

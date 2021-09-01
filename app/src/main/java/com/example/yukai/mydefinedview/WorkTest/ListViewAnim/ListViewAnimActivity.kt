@@ -2,13 +2,14 @@ package com.example.yukai.mydefinedview.WorkTest.ListViewAnim
 
 import android.app.Activity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.view.animation.LayoutAnimationController
+import android.widget.Button
 import android.widget.ListView
 import com.example.yukai.mydefinedview.R
 
@@ -38,7 +39,7 @@ class ListViewAnimActivity : Activity(), View.OnClickListener{
         val headerView2 = LayoutInflater.from(this).inflate(R.layout.city_guide_header_view, mListView, false)
         mListView?.addHeaderView(headerView1)
         mListView?.addHeaderView(headerView2)
-        findViewById(R.id.button).setOnClickListener(this)
+        findViewById<Button>(R.id.button).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -53,12 +54,12 @@ class ListViewAnimActivity : Activity(), View.OnClickListener{
     }
 
     private inner class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewHolder>(){
-        override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerViewHolder {
-            val view = LayoutInflater.from(parent?.context).inflate(R.layout.anim_recycler_view_item, parent, false)
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.anim_recycler_view_item, parent, false)
             return RecyclerViewHolder(view)
         }
 
-        override fun onBindViewHolder(holder: RecyclerViewHolder?, position: Int) {
+        override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
         }
 
         override fun getItemCount(): Int = 10

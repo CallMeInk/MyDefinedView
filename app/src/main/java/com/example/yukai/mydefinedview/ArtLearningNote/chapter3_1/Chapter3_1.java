@@ -2,14 +2,13 @@ package com.example.yukai.mydefinedview.ArtLearningNote.chapter3_1;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.yukai.mydefinedview.R;

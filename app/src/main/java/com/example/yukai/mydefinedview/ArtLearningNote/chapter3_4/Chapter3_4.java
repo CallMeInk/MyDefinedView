@@ -2,15 +2,13 @@ package com.example.yukai.mydefinedview.ArtLearningNote.chapter3_4;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.yukai.mydefinedview.R;
-
-import javax.security.auth.login.LoginException;
 
 /**
  * Created by yukai on 2018/1/2.

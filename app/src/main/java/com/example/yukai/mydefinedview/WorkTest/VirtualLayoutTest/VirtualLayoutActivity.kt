@@ -2,7 +2,7 @@ package com.example.yukai.mydefinedview.WorkTest.VirtualLayoutTest
 
 import android.app.Activity
 import android.os.Bundle
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -37,13 +37,13 @@ class VirtualLayoutActivity : Activity(){
 //        viewPool.setMaxRecycledViews(0, 10)
 //        recyclerView?.recycledViewPool = viewPool
         val adapter = object : VirtualLayoutAdapter<MainViewHolder>(layoutManager){
-            override fun onBindViewHolder(holder: MainViewHolder?, position: Int) {
+            override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
                 val layoutParams = VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300)
-                holder?.itemView?.layoutParams = layoutParams
-                (holder?.itemView as TextView?)?.text = position.toString()
+                holder.itemView.layoutParams = layoutParams
+                (holder.itemView as TextView?)?.text = position.toString()
             }
 
-            override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MainViewHolder{
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder{
                 return MainViewHolder(TextView(this@VirtualLayoutActivity))
             }
 

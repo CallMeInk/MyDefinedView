@@ -2,7 +2,7 @@ package com.example.yukai.mydefinedview.BasicView.ToggleButtonTest;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;

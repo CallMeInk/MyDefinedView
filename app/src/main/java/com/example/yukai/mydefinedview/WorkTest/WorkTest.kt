@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import com.example.yukai.mydefinedview.R
 import com.example.yukai.mydefinedview.WorkTest.CircleImageViewTest.CircleImageViewActivity
 import com.example.yukai.mydefinedview.WorkTest.CornerImageViewTest.CornerImageViewActivity
@@ -27,19 +28,19 @@ class WorkTest : Activity(), View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.work_test_activity)
-        findViewById(R.id.btn_work_ui_test).setOnClickListener(this)
-        findViewById(R.id.btn_list_view_anim).setOnClickListener(this)
-        findViewById(R.id.btn_small_big_pic_anim).setOnClickListener(this)
-        findViewById(R.id.btn_virtual_layout).setOnClickListener(this)
-        findViewById(R.id.btn_circle_image_test).setOnClickListener(this)
-        findViewById(R.id.btn_room_anim).setOnClickListener(this)
-        findViewById(R.id.btn_corner_image).setOnClickListener(this)
-        findViewById(R.id.btn_view_flipper).setOnClickListener(this)
-        findViewById(R.id.btn_touch_event_test).setOnClickListener(this)
-        findViewById(R.id.btn_full_room_UI_test).setOnClickListener(this)
-        findViewById(R.id.btn_wanna_go_test).setOnClickListener(this)
-        findViewById(R.id.btn_list_view_popup_window).setOnClickListener(this)
-        findViewById(R.id.btn_medal_type_test).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_work_ui_test).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_list_view_anim).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_small_big_pic_anim).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_virtual_layout).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_circle_image_test).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_room_anim).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_corner_image).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_view_flipper).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_touch_event_test).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_full_room_UI_test).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_wanna_go_test).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_list_view_popup_window).setOnClickListener(this)
+        findViewById<Button>(R.id.btn_medal_type_test).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {

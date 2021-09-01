@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import com.example.yukai.mydefinedview.ExampleTest.AsyncTaskTest.AsyncTaskTestActivity
 import com.example.yukai.mydefinedview.ExampleTest.HandlerTest.HandlerTestActivity
 import com.example.yukai.mydefinedview.ExampleTest.HttpTest.HttpTestActivity
@@ -18,10 +19,10 @@ class ExampleTestActivity : Activity(), View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.example_test_activity)
-        findViewById(R.id.handler_test_btn).setOnClickListener(this)
-        findViewById(R.id.service_test_btn).setOnClickListener(this)
-        findViewById(R.id.http_test_btn).setOnClickListener(this)
-        findViewById(R.id.asynctask_test_btn).setOnClickListener(this)
+        findViewById<Button>(R.id.handler_test_btn).setOnClickListener(this)
+        findViewById<Button>(R.id.service_test_btn).setOnClickListener(this)
+        findViewById<Button>(R.id.http_test_btn).setOnClickListener(this)
+        findViewById<Button>(R.id.asynctask_test_btn).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {

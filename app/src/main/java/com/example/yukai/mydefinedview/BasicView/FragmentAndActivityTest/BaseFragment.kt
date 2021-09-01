@@ -2,7 +2,7 @@ package com.example.yukai.mydefinedview.BasicView.FragmentAndActivityTest
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +15,7 @@ open class BaseFragment : Fragment(){
 
     open fun getLogName() = "BaseFragment"
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         Log.e("yk", "${getLogName()}::onAttach")
         super.onAttach(context)
     }
@@ -25,7 +25,7 @@ open class BaseFragment : Fragment(){
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.e("yk", "${getLogName()}::onCreateView")
         return super.onCreateView(inflater, container, savedInstanceState)
     }

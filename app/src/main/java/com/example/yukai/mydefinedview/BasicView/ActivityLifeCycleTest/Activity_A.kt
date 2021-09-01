@@ -1,6 +1,5 @@
 package com.example.yukai.mydefinedview.BasicView.ActivityLifeCycleTest
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -14,7 +13,7 @@ class Activity_A(activityLabel: String = "activity_A") : BaseActivity(activityLa
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_a_layout)
-        findViewById(R.id.btn).setOnClickListener { v ->
+        findViewById<Button>(R.id.btn).setOnClickListener {
             val intent: Intent = Intent(this, Activity_B::class.java)
             startActivity(intent)
         }

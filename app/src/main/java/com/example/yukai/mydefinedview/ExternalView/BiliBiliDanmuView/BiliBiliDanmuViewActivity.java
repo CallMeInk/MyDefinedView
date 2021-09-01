@@ -3,7 +3,7 @@ package com.example.yukai.mydefinedview.ExternalView.BiliBiliDanmuView;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.example.yukai.mydefinedview.R;
 
